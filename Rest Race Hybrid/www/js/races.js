@@ -18,6 +18,6 @@ function displayRaces() {
 	$("#races").append(races).listview().listview("refresh");
 	
 	$(".race").on("tap", function() {
-		window.location = "race.html?id=" + $(this).attr("id") + "&bla=abc";
+		window.location = "race.html?id=" + $(this).attr("id");
 	});
 }
