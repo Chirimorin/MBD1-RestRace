@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		
+        <title>RestRace</title>
+    </head>
+    <body>
+	
+        <div data-role="page" id="page_race">
+
+			<div data-role="header" data-id="header" data-position="fixed">
+				<a href="#" data-role="button" data-mini="true" data-rel="back">Terug</a>
+				<h1>Wachtwoord wijzigen</h1>
+			</div>
+
+			<div data-role="main" class="ui-content">
+				<p>
+					<div data-role="fieldcontain">
+						<label for="oud_wachtwoord">Oud wachtwoord:</label>
+						<input type="password" id="oud_wachtwoord" name="oud_wachtwoord" placeholder="Oud wachtwoord" />
+					</div>
+					<div data-role="fieldcontain">
+						<label for="nieuw_wachtwoord1">Nieuw wachtwoord:</label>
+						<input type="password" id="nieuw_wachtwoord1" name="nieuw_wachtwoord1" placeholder="Nieuw wachtwoord" />
+					</div>
+					<div data-role="fieldcontain">
+						<label for="nieuw_wachtwoord2">Herhaal nieuw wachtwoord:</label>
+						<input type="password" id="nieuw_wachtwoord2" name="nieuw_wachtwoord2" placeholder="Nieuw wachtwoord" />
+					</div>
+					<button id="btn_wijzigen">Wijzigen</button>
+				</p>
+			</div>
+
+		</div>
+		
+		<script src="js/wachtwoordWijzigen.js"></script>
+		
+    </body>
+</html>

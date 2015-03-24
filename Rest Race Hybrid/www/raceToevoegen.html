@@ -11,7 +11,6 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-		<script src="js/global.js"></script>
 		
         <title>RestRace</title>
     </head>
@@ -25,12 +24,18 @@
 			</div>
 
 			<div data-role="main" class="ui-content">
-				
+				<p>
+					<div data-role="fieldcontain">
+						<label for="code">Code:</label>
+						<input type="text" id="code" name="code" placeholder="Code" />
+					</div>
+					<button id="btn_toevoegen">Toevoegen</button>
+				</p>
 			</div>
 
 		</div>
 		
-		<script src="js/race.js"></script>
+		<script src="js/raceToevoegen.js"></script>
 		
     </body>
 </html>
