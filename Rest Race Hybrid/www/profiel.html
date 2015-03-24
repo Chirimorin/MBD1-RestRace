@@ -17,8 +17,18 @@
     <body>
 	
         <div data-role="page" id="page_race">
+		
+			<div data-role="panel" data-position="left" display="overlay" id="menu">
+				<ul data-role="listview">
+					<li data-icon='star'><a href='#' id="menu_item_races">Races</a></li>
+					<li data-icon='user'><a href='#' id="menu_item_profiel">Profiel</a></li>
+					<li data-icon='gear'><a href='#' id="menu_item_settings">Settings</a></li>
+					<li data-icon='power'><a href='#' id="menu_item_uitloggen">Uitloggen</a></li>
+				</ul>
+			</div>
 
 			<div data-role="header" data-id="header" data-position="fixed">
+				<a href="#menu" data-icon="bars" id="btn_menu" data-iconpos="notext" class="ui-btn-menu"></a>
 				<h1>Profiel</h1>
 			</div>
 

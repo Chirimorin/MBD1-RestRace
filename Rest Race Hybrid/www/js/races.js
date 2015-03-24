@@ -13,8 +13,8 @@ function displayRaces() {
 	
 	var races = "";
 	for(var i = 0; i < allRaces.length; i++) {
-		races += 	"<li id=" + allRaces[i]._id + " class='race' rel='external'>" + allRaces[i].name + 
-					"<br/ >" + allRaces[i].bezochte_waypoints + "/" + allRaces[i].aantal_waypoints + " waypoints</li>";
+		races += 	"<li data-icon='carat-r'><a href='#' id=" + allRaces[i]._id + " class='race'>" + allRaces[i].name + 
+					"<br/ >" + allRaces[i].bezochte_waypoints + "/" + allRaces[i].aantal_waypoints + " waypoints</a></li>";
 	}
 	$("#races").append(races).listview().listview("refresh");
 	
@@ -22,6 +22,22 @@ function displayRaces() {
 		window.location = "race.html?id=" + $(this).attr("id");
 	});
 }
+
+$("#menu_item_races").on("tap", function() {
+	window.location = "races.html";
+});
+
+$("#menu_item_profiel").on("tap", function() {
+	window.location = "profiel.html";
+});
+
+$("#menu_item_settings").on("tap", function() {
+	window.location = "settings.html";
+});
+
+$("#menu_item_uitloggen").on("tap", function() {
+	window.location = "index.html";
+});
 
 $("#btn_race_toevoegen").on("tap", function() {
 	window.location = "raceToevoegen.html";

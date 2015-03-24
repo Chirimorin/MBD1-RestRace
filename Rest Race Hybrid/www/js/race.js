@@ -27,15 +27,17 @@ function displayWaypoints() {
 	
 	var waypoints = "";
 	for(var i = 0; i < allWaypoints.length; i++) {
-		waypoints += "<li id=" + allWaypoints[i]._id + " class='waypoint' rel='external'>" + allWaypoints[i].name;
+		waypoints += "<li data-icon='carat-r'><a href='#' id=" + allWaypoints[i]._id + " class='waypoint'>" + allWaypoints[i].name;
 		if (allWaypoints[i].status == "ingecheckt") {
 			waypoints += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V";
 		}
-		waypoints += "<br>" + allWaypoints[i].ingecheckte_deelnemers + "/" + race.aantal_deelnemers + " deelnemers</li>";
+		waypoints += "<br>" + allWaypoints[i].ingecheckte_deelnemers + "/" + race.aantal_deelnemers + " deelnemers</a></li>";
 	}
 	$("#waypoints").append(waypoints).listview().listview("refresh");
 	
 	$(".waypoint").on("tap", function() {
+		console.log("Test");
+		console.log("Id: " + $(this).attr("id"));
 		window.location = "waypoint.html?id=" + $(this).attr("id");
 	});
 }
