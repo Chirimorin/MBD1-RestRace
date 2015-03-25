@@ -17,3 +17,7 @@ $("#menu_item_uitloggen").on("tap", function() {
 $("#link_wachtwoord_wijzigen").on("tap", function() {
 	window.location = "wachtwoordWijzigen.html";
 });
+
+$("#menu").on("tap", function() {
+	$("#menu").panel( "close" );
+});

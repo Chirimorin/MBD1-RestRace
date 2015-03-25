@@ -39,6 +39,10 @@ $("#menu_item_uitloggen").on("tap", function() {
 	window.location = "index.html";
 });
 
+$("#menu").on("tap", function() {
+	$("#menu").panel( "close" );
+});
+
 $("#btn_race_toevoegen").on("tap", function() {
 	window.location = "raceToevoegen.html";
 });

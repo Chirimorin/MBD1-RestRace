@@ -2,7 +2,6 @@ $(document).on("mobileinit", function(){
 	$.mobile.defaultPageTransition = 'slide';
 });
 
-
 // Geeft de waarde van een parameter in een URL terug
 function getUrlParameter(parameter){
     var URLParametersString = window.location.search.substring(1);

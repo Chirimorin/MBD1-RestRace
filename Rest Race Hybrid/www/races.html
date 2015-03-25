@@ -16,6 +16,7 @@
     </head>
     <body>
 	
+		<div id="container">
         <div data-role="page" id="page_races">
 
 			<div data-role="panel" data-position="left" display="overlay" id="menu">
@@ -27,7 +28,7 @@
 				</ul>
 			</div>
 		
-			<div data-role="header" data-id="header" data-position="fixed">
+			<div data-role="header" data-id="header">
 				<a href="#menu" data-icon="bars" id="btn_menu" data-iconpos="notext" class="ui-btn-menu"></a>
 				<h1>Races</h1>
 				<a href="#" data-transition="slide" data-icon="plus" data-iconpos="notext" id="btn_race_toevoegen" class="ui-btn-right"></a>
@@ -37,6 +38,7 @@
 				<ul data-role="listview" data-inset="true" id="races"></ul>
 			</div>
 
+		</div>
 		</div>
 		
 		<script src="js/races.js"></script>

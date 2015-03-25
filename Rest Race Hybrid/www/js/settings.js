@@ -13,3 +13,7 @@ $("#menu_item_settings").on("tap", function() {
 $("#menu_item_uitloggen").on("tap", function() {
 	window.location = "index.html";
 });
+
+$("#menu").on("tap", function() {
+	$("#menu").panel( "close" );
+});
