@@ -12,6 +12,8 @@
 		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		
+		<link rel="stylesheet" type="text/css" href="css/global.css" />
+		
         <title>RestRace</title>
     </head>
     <body>
@@ -21,17 +23,17 @@
 
 			<div data-role="panel" data-position="left" display="overlay" id="menu">
 				<ul data-role="listview">
-					<li data-icon='star'><a href='#' id="menu_item_races">Races</a></li>
-					<li data-icon='user'><a href='#' id="menu_item_profiel">Profiel</a></li>
-					<li data-icon='gear'><a href='#' id="menu_item_settings">Settings</a></li>
-					<li data-icon='power'><a href='#' id="menu_item_uitloggen">Uitloggen</a></li>
+					<li data-icon='star'><a href='#' id="menu_item_races" class="menuItem">Races</a></li>
+					<li data-icon='user'><a href='#' id="menu_item_profiel" class="menuItem">Profiel</a></li>
+					<li data-icon='gear'><a href='#' id="menu_item_settings" class="menuItem">Settings</a></li>
+					<li data-icon='power'><a href='#' id="menu_item_uitloggen" class="menuItem">Uitloggen</a></li>
 				</ul>
 			</div>
 		
-			<div data-role="header" data-id="header">
-				<a href="#menu" data-icon="bars" id="btn_menu" data-iconpos="notext" class="ui-btn-menu"></a>
+			<div data-role="header" data-id="header" class="header">
+				<a href="#menu" data-icon="bars" data-iconpos="notext" id="btn_menu" class="icon"></a>
 				<h1>Races</h1>
-				<a href="#" data-transition="slide" data-icon="plus" data-iconpos="notext" id="btn_race_toevoegen" class="ui-btn-right"></a>
+				<a href="#" data-transition="slide" data-icon="plus" data-iconpos="notext" id="btn_race_toevoegen" class="ui-btn-right icon"></a>
 			</div>
 
 			<div data-role="main" class="ui-content">

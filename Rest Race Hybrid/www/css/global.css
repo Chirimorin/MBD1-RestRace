@@ -13,3 +13,44 @@ body {
     width: 100%;
     height: 100%;
 }
+
+.header {
+	background-color: #303F9F !important;
+	color: #FFFFFF !important;
+}
+
+.icon {
+	background-color: #00BCD4 !important;
+}
+
+.menuItem {
+	background-color: #00BCD4 !important;
+}
+
+.menuItem:hover { 
+    background-color: #B6B6B6 !important;
+}
+
+button {
+	background-color: #00BCD4 !important;
+}
+
+.link {
+	color: #00BCD4 !important;
+}
+
+.link:hover {
+	color: #B6B6B6 !important;
+}
+
+.listItem {
+	background-color: #C5CAE9 !important;
+}
+
+.listItem:hover { 
+    background-color: #B6B6B6 !important;
+}
+
+.tekst {
+	color: #727272 !important;
+}

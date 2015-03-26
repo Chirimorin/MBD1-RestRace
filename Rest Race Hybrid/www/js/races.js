@@ -13,8 +13,8 @@ function displayRaces() {
 	
 	var races = "";
 	for(var i = 0; i < allRaces.length; i++) {
-		races += 	"<li data-icon='carat-r'><a href='#' id=" + allRaces[i]._id + " class='race'>" + allRaces[i].name + 
-					"<br/ >" + allRaces[i].bezochte_waypoints + "/" + allRaces[i].aantal_waypoints + " waypoints</a></li>";
+		races += 	"<li data-icon='carat-r'><a href='#' id=" + allRaces[i]._id + " class='race listItem'>" + allRaces[i].name + 
+					"<br/ ><span class='tekst'>" + allRaces[i].bezochte_waypoints + "/" + allRaces[i].aantal_waypoints + " waypoints</span></a></li>";
 	}
 	$("#races").append(races).listview().listview("refresh");
 	
