@@ -1,4 +1,4 @@
-$("#page_race").on("pageshow", onPageShow);
+$("#page_waypoint").on("pageshow", onPageShow);
 
 function onPageShow(e,data) {
 	$("#naam").text("Waypoint " + getUrlParameter("id"));
