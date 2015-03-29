@@ -1,3 +1,11 @@
+$("#page_settings").on("swiperight", function(event){
+    $("#menu").panel("open");
+});
+
+$("#page_settings").on("swipeleft", function(event){
+    $("#menu").panel("close");
+});
+
 $("#menu_item_races").on("tap", function() {
 	window.location = "races.html";
 });
