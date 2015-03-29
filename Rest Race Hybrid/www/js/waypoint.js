@@ -4,3 +4,7 @@ function onPageShow(e,data) {
 	$("#naam").text("Waypoint " + getUrlParameter("id"));
 	$("#omschrijving").append("<p>Omschrijving van het waypoint met het id: " + getUrlParameter("id") + "</p>");
 }
+
+$("#page_waypoint").on("swiperight", function(event){
+	history.back();
+});

@@ -2,24 +2,16 @@
 	-webkit-backface-visibility: hidden; 
 }
 
-body {
-    /* Setting body margins to 0 to have proper positioning of #container div */
-    margin: 0;
-}
-
-/* #container div with absolute position and 100% width and height so it takes up whole window */
-#container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
 .header {
 	background-color: #303F9F !important;
 	color: #FFFFFF !important;
 }
 
 .icon {
+	background-color: #00BCD4 !important;
+}
+
+#menu {
 	background-color: #00BCD4 !important;
 }
 

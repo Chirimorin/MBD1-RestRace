@@ -41,4 +41,8 @@ function displayWaypoints() {
 		window.location = "waypoint.html?id=" + $(this).attr("id");
 	});
 }
+
+$("#page_race").on( "swiperight", function(event){
+    window.location = "races.html";
+});
 		
