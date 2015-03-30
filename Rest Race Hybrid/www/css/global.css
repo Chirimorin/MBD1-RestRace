@@ -17,6 +17,7 @@
 
 .menuItem {
 	background-color: #00BCD4 !important;
+	color: #000000;
 }
 
 .menuItem:hover { 

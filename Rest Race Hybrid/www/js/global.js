@@ -9,3 +9,13 @@ function getUrlParameter(parameter){
         }
     }
 } 
+
+// Slaat een object op in localstorage.
+function save(name,value) {
+    localStorage.setItem(name, JSON.stringify(value));
+}
+
+// Laad een object uit localstorage.
+function load(name) {
+    return JSON.parse(localStorage.getItem(name));
+}
