@@ -42,7 +42,45 @@ function displayWaypoints() {
 	});
 }
 
-$("#page_race").on( "swiperight", function(event){
+$("#page_race").on("swiperight", function(event){
     window.location = "races.html";
+});
+
+$("#btn_inchecken").on("tap", function(){
+	/*var onSuccess = function(position) {
+		alert('Latitude: '          + position.coords.latitude          + '\n' +
+			  'Longitude: '         + position.coords.longitude         + '\n' +
+			  'Altitude: '          + position.coords.altitude          + '\n' +
+			  'Accuracy: '          + position.coords.accuracy          + '\n' +
+			  'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+			  'Heading: '           + position.coords.heading           + '\n' +
+			  'Speed: '             + position.coords.speed             + '\n' +
+			  'Timestamp: '         + position.timestamp                + '\n');
+	};
+
+	// onError Callback receives a PositionError object
+	//
+	function onError(error) {
+		alert('code: '    + error.code    + '\n' +
+			  'message: ' + error.message + '\n');
+	}
+
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);*/
+	
+
+	alert("1");
+	function onSuccess(imageData) {
+		//var image = document.getElementById('myImage');
+		//image.src = "data:image/jpeg;base64," + imageData;
+		alert('Foto');
+		
+	}
+
+	function onFail(message) {
+		alert('Failed because: ' + message);
+	}
+	alert("2");
+	navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.DATA_URI});
+alert("3");
 });
 		
