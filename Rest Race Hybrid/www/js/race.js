@@ -67,20 +67,21 @@ $("#btn_inchecken").on("tap", function(){
 
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);*/
 	
-
-	alert("1");
-	function onSuccess(imageData) {
-		//var image = document.getElementById('myImage');
-		//image.src = "data:image/jpeg;base64," + imageData;
-		alert('Foto');
-		
+	
+	function playAudio(url) {
+		var my_media = new Media(url, onSuccess, onError);
+		my_media.play();
 	}
 
-	function onFail(message) {
-		alert('Failed because: ' + message);
+	function onSuccess() {
+		console.log("playAudio():Audio Success");
 	}
-	alert("2");
-	navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: camera.DestinationType.DATA_URI});
-alert("3");
+
+	function onError(err) {
+        console.log("playAudio():Audio Error: " + err);
+	}
+
+	playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+	
 });
 		
