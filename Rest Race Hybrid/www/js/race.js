@@ -67,6 +67,11 @@ $("#btn_inchecken").on("tap", function(){
 
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);*/
 	
+
+	
+	
+	
+	/*var my_media = new Media("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3", onSuccess, onError);
 	
 	function playAudio(url) {
 		var my_media = new Media(url, onSuccess, onError);
@@ -81,7 +86,7 @@ $("#btn_inchecken").on("tap", function(){
         console.log("playAudio():Audio Error: " + err);
 	}
 
-	playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
-	
+	playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");*/
+
 });
 		
