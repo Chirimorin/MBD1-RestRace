@@ -80,7 +80,7 @@ $("#btn_inchecken").on("tap", function(){
 		alert('Failed because: ' + message);
 	}
 	alert("2");
-	navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.DATA_URI});
+	navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: camera.DestinationType.DATA_URI});
 alert("3");
 });
 		
