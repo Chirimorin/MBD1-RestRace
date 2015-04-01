@@ -1,7 +1,3 @@
-$(document).ready(function() {
-    //$("#nickname").val(); MOET OPGESLAGEN NICKNAME ZIJN
-});
-
 $("#btn_opslaan").on("tap", function() {
 	toonToast("Nickname opgeslagen");
 });

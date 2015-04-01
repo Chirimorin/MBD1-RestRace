@@ -9,7 +9,7 @@ $("#btn_registreren").on("tap", function() {
 		dataType: "json",
 		data: {
 			"email": $("#emailadres").val(),
-			"password": $("#wachtwoord1").val()
+			"password": $("#wachtwoord").val()
 		},
 		success: function(data) {
 			if (data.authKey) {
