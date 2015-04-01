@@ -28,6 +28,10 @@ button {
 	background-color: #00BCD4 !important;
 }
 
+button:hover { 
+    background-color: #B6B6B6 !important;
+}
+
 .link {
 	color: #00BCD4 !important;
 }
@@ -46,6 +50,11 @@ button {
 
 .tekst {
 	color: #727272 !important;
+}
+
+.statusWaypoint {
+	float: right;
+	padding-right: 20px;
 }
 
 /*@media all and (min-width: 50em){

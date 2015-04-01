@@ -8,13 +8,15 @@ function onPageShow(e,data) {
 
 $(document).ready(function() {
 	displayWaypoints();
-});
-
-
-document.addEventListener("deviceready", onDeviceReady, false);
+	
+	document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
          alert("Device ready!!!");
     }
+
+});
+
+
 
 		
 
@@ -36,9 +38,9 @@ function displayWaypoints() {
 	
 	var waypoints = "";
 	for(var i = 0; i < allWaypoints.length; i++) {
-		waypoints += "<li data-icon='carat-r'><a href='#' id=" + allWaypoints[i]._id + " class='waypoint listItem'>" + allWaypoints[i].name;
+		waypoints += "<li data-icon='carat-r'><a href='#' id=" + allWaypoints[i]._id + " class='waypoint listItem'><span>" + allWaypoints[i].name + "</span>";
 		if (allWaypoints[i].status == "ingecheckt") {
-			waypoints += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V";
+			waypoints += "<span class='statusWaypoint'>Ingecheckt</span>";
 		}
 		waypoints += "<br /><span class='tekst'>" + allWaypoints[i].ingecheckte_deelnemers + "/" + race.aantal_deelnemers + " deelnemers</span></a></li>";
 	}
