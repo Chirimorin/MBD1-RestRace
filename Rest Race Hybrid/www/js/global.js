@@ -1,3 +1,5 @@
+restrace = "https://restrace2.herokuapp.com/";
+
 // Slaat een object op in localstorage.
 function save(name,value) {
     localStorage.setItem(name, JSON.stringify(value));

@@ -1,3 +1,16 @@
 $("#btn_registreren").on("tap", function() {
-	window.location = "index.html";
+	
+	$.ajax({
+		type: "POST",
+		url: restrace + "signup",
+		data: {
+			email: $("#emailadres").val(),
+			password: $("#wachtwoord1").val()
+		},
+		success: function(data) {
+			console.log(data);
+		}
+	});
+	
+	//window.location = "index.html";
 })
