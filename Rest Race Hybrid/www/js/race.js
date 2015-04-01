@@ -5,9 +5,18 @@ function onPageShow(e,data) {
 	$("#omschrijving").append("<p>Omschrijving van de race met het id: " + getUrlParameter("id") + "</p>");
 }
 
+ var onDeviceReady = function() {
+            alert("Device ready!!!");
+        };
+
 $(document).ready(function() {
 	displayWaypoints();
 });
+
+
+document.addEventListener("deviceready", onDeviceReady, true);
+
+		
 
 function displayWaypoints() {
 	var race = {
