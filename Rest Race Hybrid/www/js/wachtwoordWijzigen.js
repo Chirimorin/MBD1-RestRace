@@ -1,3 +1,6 @@
 $("#btn_wijzigen").on("tap", function() {
-	window.location = "profiel.html";
+	$("#oud_wachtwoord").val("");
+	$("#nieuw_wachtwoord1").val("");
+	$("#nieuw_wachtwoord2").val("");
+	toonToast("Wachtwoord is gewijzigd");
 });
