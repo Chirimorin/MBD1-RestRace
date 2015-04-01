@@ -16,7 +16,19 @@ $(document).one('pagebeforecreate', function () {
 	});
 
 	$("#menu_item_uitloggen").on("tap", function() {
-		window.location = "index.html";
+		
+		$.ajax({
+			type: "GET",
+			url: restrace + "logout",
+			headers: {
+				Accept: "application/json"
+			},
+			success: function() {
+				save("authKey", "");
+				window.location = "index.html";
+			}
+		});
+		
 	});
 
 	$("#menu").on("tap", function() {
@@ -28,7 +40,4 @@ $(document).on("swiperight", function(event){
     $("#menu").panel("open");
 });
 
-/*$(document).on("swipeleft", function(event){
-    $("#menu").panel("close");
-});*/
 

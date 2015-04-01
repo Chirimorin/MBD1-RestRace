@@ -13,6 +13,7 @@ $("#btn_inloggen").on("tap", function() {
 		},
 		success: function(data) {
 			if (data.authKey) {
+				save("authKey", data.authKey);
 				window.location = "races.html";
 			}
 			else {
