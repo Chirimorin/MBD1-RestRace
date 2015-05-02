@@ -14,6 +14,8 @@ $("#btn_inloggen").on("tap", function() {
 		success: function(data) {
 			if (data.authKey) {
 				save("authKey", data.authKey);
+				data.nickname != null ? save("nickname", data.nickname) : save("nickname", "");
+				save("visitedWaypoints", data.visitedLocations);
 				window.location = "races.html";
 			}
 			else {

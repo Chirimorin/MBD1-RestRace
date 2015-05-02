@@ -52,7 +52,7 @@ button:hover {
 	color: #727272 !important;
 }
 
-.statusWaypoint {
+.status {
 	float: right;
 	padding-right: 20px;
 }
