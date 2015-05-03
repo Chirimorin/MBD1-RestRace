@@ -25,6 +25,9 @@ $(document).one('pagebeforecreate', function () {
 			},
 			success: function() {
 				save("authKey", "");
+				save("nickname", "");
+				save("visitedWaypoints", "");
+				sessionStorage.setItem("allRaces", "");
 				window.location = "index.html";
 			}
 		});

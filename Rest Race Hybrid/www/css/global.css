@@ -57,6 +57,17 @@ button:hover {
 	padding-right: 20px;
 }
 
+#startTijdDiv {
+	float: left;
+	width: 50%;
+}
+
+#eindTijdDiv {
+	float: right;
+	width: 50%;
+	text-align: right;
+}
+
 /*@media all and (min-width: 50em){
 	#page_races {
 		display: block;
