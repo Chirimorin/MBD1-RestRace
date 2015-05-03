@@ -18,9 +18,6 @@ $(document).ready(function() {
 });		
 
 function displayWaypoints(race) {
-	
-
-	
 	var waypoints = "";
 	for(var i = 0; i < race.locations.length; i++) {
 		waypoints += 	"<li data-icon='carat-r'><a href='#' id=" + race.locations[i].location._id + " class='waypoint listItem'><span>" + race.locations[i].location.name + "</span>";
@@ -29,7 +26,7 @@ function displayWaypoints(race) {
 	$("#waypoints").append(waypoints).listview().listview("refresh");
 	
 	$(".waypoint").on("tap", function() {
-		window.location = "waypoint.html?id=" + $(this).attr("id");
+		window.location = "waypoint.html?idRace=" + race._id + "&idWaypoint=" + $(this).attr("id");
 	});
 }
 
