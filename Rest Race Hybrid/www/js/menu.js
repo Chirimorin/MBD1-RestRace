@@ -27,6 +27,7 @@ $(document).one('pagebeforecreate', function () {
 				save("authKey", "");
 				save("nickname", "");
 				save("visitedWaypoints", "");
+				save("code", "");
 				sessionStorage.setItem("allRaces", "");
 				window.location = "index.html";
 			}

@@ -1,7 +1,30 @@
-$("#btn_opslaan").on("tap", function() {
-	toonToast("Nickname opgeslagen");
+$(document).ready(function() {
+	load("nickname") != "" ? $("#huidigeNickname").text(load("nickname")) : $("#huidigeNickname").text("<i>(Geen nickname)</i>");
+	$("#nickname").val(load("nickname"));
 });
 
-$("#link_wachtwoord_wijzigen").on("tap", function() {
-	window.location = "wachtwoordWijzigen.html";
+
+$("#btn_opslaan").on("tap", function() {
+	
+	$.ajax({
+		type: "PUT",
+		url: restrace + "users/nickname?apikey=" + load("authKey"),
+		headers: {
+			Accept: "application/json"
+		},
+		data: {
+			"nickname": $("#nickname").val()
+		},
+		dataType: "json",
+		success: function(data) {
+			$("#huidigeNickname").text($("#nickname").val());
+			save("code", $("#nickname").val());
+			toonToast("Nickname opgeslagen.");
+		},
+		error: function() {
+			toonToast("Nickname wijzigen mislukt.");
+		}
+	});
+	
 });
+
