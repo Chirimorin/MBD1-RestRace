@@ -1,6 +1,8 @@
+var race = "";
+
 $(document).ready(function() {
 	var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));
-	var race = $.grep(allRaces, function(e){ return e._id == getUrlParameter("id"); })[0];
+	race = $.grep(allRaces, function(e){ return e._id == getUrlParameter("id"); })[0];
 	
 	$("#naam").text(race.name);
 	
@@ -14,10 +16,10 @@ $(document).ready(function() {
 							('0' + eind.getHours()).slice(-2) + ":" + ('0' + eind.getMinutes()).slice(-2));
 	}
 	
-	displayWaypoints(race);	
+	displayWaypoints();	
 });		
 
-function displayWaypoints(race) {
+function displayWaypoints() {
 	var waypoints = "";
 	for(var i = 0; i < race.locations.length; i++) {
 		waypoints += 	"<li data-icon='carat-r'><a href='#' id=" + race.locations[i].location._id + " class='waypoint listItem'><span>" + race.locations[i].location.name + "</span>";
@@ -44,13 +46,22 @@ $("#btn_inchecken").on("tap", function(){
 			  'Heading: '           + position.coords.heading           + '\n' +
 			  'Speed: '             + position.coords.speed             + '\n' +
 			  'Timestamp: '         + position.timestamp                + '\n');
+			  
+		$.ajax({
+			type: "PUT",
+			url: restrace + "races/" + race._id + "/location/ + position.coords.latitude + "/" + position.coords.longitude",
+			headers: {
+				Accept: "application/json"
+			},
+			dataType: "json",
+			success: function(data) {
+				checkedIn ? toonToast("U bent ingecheckt.") : toonToast("U bent niet ingecheckt.");
+			}
+		});
 	};
-
-	// onError Callback receives a PositionError object
-	//
+	
 	function onError(error) {
-		alert('code: '    + error.code    + '\n' +
-			  'message: ' + error.message + '\n');
+		toonToast("Geen locatie gevonden.");
 	}
 
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);*/
