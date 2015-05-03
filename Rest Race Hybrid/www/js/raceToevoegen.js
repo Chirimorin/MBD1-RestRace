@@ -7,6 +7,23 @@ $(window).unload(function(){
 });
 
 $("#btn_toevoegen").on("tap", function() {
-	save("code", "");
-	window.location = "races.html";
+	
+	if ($("#code").val() != "") {
+		$.ajax({
+			type: "PUT",
+			url: restrace + "races/" + $("#code").val() + "/participant?apikey=" + load("authKey"),
+			headers: {
+				Accept: "application/json"
+			},
+			dataType: "json",
+			success: function(data) {
+				$("#code").val("");
+				window.location = "races.html";
+			},
+			error: function() {
+				toonToast("Code is ongeldig.");
+			}
+		});
+	}
+
 });
