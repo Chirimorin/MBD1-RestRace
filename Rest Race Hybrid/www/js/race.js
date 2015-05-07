@@ -37,15 +37,15 @@ $("#page_race").on("swiperight", function(event){
 });
 
 $("#btn_inchecken").on("tap", function(){
-	/*var onSuccess = function(position) {
-		alert('Latitude: '          + position.coords.latitude          + '\n' +
+	var onSuccess = function(position) {
+		/*alert('Latitude: '          + position.coords.latitude          + '\n' +
 			  'Longitude: '         + position.coords.longitude         + '\n' +
 			  'Altitude: '          + position.coords.altitude          + '\n' +
 			  'Accuracy: '          + position.coords.accuracy          + '\n' +
 			  'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
 			  'Heading: '           + position.coords.heading           + '\n' +
 			  'Speed: '             + position.coords.speed             + '\n' +
-			  'Timestamp: '         + position.timestamp                + '\n');
+			  'Timestamp: '         + position.timestamp                + '\n');*/
 			  
 		$.ajax({
 			type: "PUT",
@@ -56,18 +56,20 @@ $("#btn_inchecken").on("tap", function(){
 			dataType: "json",
 			success: function(data) {
 				checkedIn ? toonToast("U bent ingecheckt.") : toonToast("U bent niet ingecheckt.");
+				playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
 			}
 		});
 	};
 	
 	function onError(error) {
 		toonToast("Geen locatie gevonden.");
+		playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
 	}
 
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);*/
-	alert("Test1");
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	/*alert("Test1");
 	playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
-	alert("Test2");
+	alert("Test2");*/
 });
 
 function playAudio(url) {
