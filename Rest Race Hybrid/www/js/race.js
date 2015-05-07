@@ -37,7 +37,7 @@ $("#page_race").on("swiperight", function(event){
 });
 
 $("#btn_inchecken").on("tap", function(){
-	/*var onSuccess = function(position) {
+	var onSuccess = function(position) {
 		alert('Latitude: '          + position.coords.latitude          + '\n' +
 			  'Longitude: '         + position.coords.longitude         + '\n' +
 			  'Altitude: '          + position.coords.altitude          + '\n' +
@@ -71,13 +71,7 @@ $("#btn_inchecken").on("tap", function(){
 		toonToast("Geen locatie gevonden.");
 	}
 
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);*/
-	
-	playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
-	
-	/*alert("Test1");
-	playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
-	alert("Test2");*/
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 });
 
 function playAudio(url) {
