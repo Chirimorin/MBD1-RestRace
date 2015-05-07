@@ -37,15 +37,15 @@ $("#page_race").on("swiperight", function(event){
 });
 
 $("#btn_inchecken").on("tap", function(){
-	var onSuccess = function(position) {
-		/*alert('Latitude: '          + position.coords.latitude          + '\n' +
+	/*var onSuccess = function(position) {
+		alert('Latitude: '          + position.coords.latitude          + '\n' +
 			  'Longitude: '         + position.coords.longitude         + '\n' +
 			  'Altitude: '          + position.coords.altitude          + '\n' +
 			  'Accuracy: '          + position.coords.accuracy          + '\n' +
 			  'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
 			  'Heading: '           + position.coords.heading           + '\n' +
 			  'Speed: '             + position.coords.speed             + '\n' +
-			  'Timestamp: '         + position.timestamp                + '\n');*/
+			  'Timestamp: '         + position.timestamp                + '\n');
 			  
 		$.ajax({
 			type: "PUT",
@@ -55,15 +55,14 @@ $("#btn_inchecken").on("tap", function(){
 			},
 			dataType: "json",
 			success: function(data) {
-				alert("Checked in: " + data.checkedIn);
-				/*if (data.checkedIn == true) {
+				if (data.checkedIn) {
 					toonToast("U bent ingecheckt.");
 					playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
 				}
 				else {
 					toonToast("U bent niet ingecheckt.");
 					playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
-				}*/
+				}
 			}
 		});
 	};
@@ -72,7 +71,9 @@ $("#btn_inchecken").on("tap", function(){
 		toonToast("Geen locatie gevonden.");
 	}
 
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);*/
+	
+	playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
 	
 	/*alert("Test1");
 	playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
@@ -80,11 +81,14 @@ $("#btn_inchecken").on("tap", function(){
 });
 
 function playAudio(url) {
-    /*var my_media = new Media(url,
-		function() { console.log("playAudio():Audio Success"); },
-		function(err) { console.log("playAudio():Audio Error: " + err); }
-    );*/
-	var my_media = new Media(url);
+    var my_media = new Media(url,
+        function () {
+            alert("playAudio():Audio Success");
+        },
+        function (err) {
+            alert("playAudio():Audio Error: " + err);
+        }
+    );
     my_media.play();
 }
 		
