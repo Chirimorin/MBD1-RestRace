@@ -9,10 +9,7 @@ $(document).ready(function() {
 	}
 	
 	$("#link_toonOpKaart").on("tap", function() {
-		//window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long;
-		window.open("http://maps.google.com/?q=" + waypoint.location.lat + "," + waypoint.location.long, "_system"); // Android
-		window.open("http://maps.apple.com/?q=" + waypoint.location.lat + "," + waypoint.location.long, "_system"); // iOS
-	});
+		window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long; // Alleen android
 });	
 
 $("#page_waypoint").on("swiperight", function(event){
