@@ -55,15 +55,20 @@ $("#btn_inchecken").on("tap", function(){
 			},
 			dataType: "json",
 			success: function(data) {
-				checkedIn ? toonToast("U bent ingecheckt.") : toonToast("U bent niet ingecheckt.");
-				playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+				if (data.checkedIn) {
+					toonToast("U bent ingecheckt.");
+					playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+				}
+				else {
+					toonToast("U bent niet ingecheckt.");
+					playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+				}
 			}
 		});
 	};
 	
 	function onError(error) {
 		toonToast("Geen locatie gevonden.");
-		playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
 	}
 
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
