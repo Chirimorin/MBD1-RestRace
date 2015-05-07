@@ -9,8 +9,9 @@ $(document).ready(function() {
 	}
 	
 	$("#link_toonOpKaart").on("tap", function() {
-		window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long;
-		//href="geo:38.897096,-77.036545"
+		//window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long;
+		window.open("http://maps.google.com/?q=" + waypoint.location.lat + "," + waypoint.location.long + ",_system"); // Android
+		window.open("http://maps.apple.com/?q=" + waypoint.location.lat + "," + waypoint.location.long + "_system"); // iOS
 	});
 });	
 
