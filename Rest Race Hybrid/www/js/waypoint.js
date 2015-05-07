@@ -7,8 +7,14 @@ $(document).ready(function() {
 	if (waypoint.location.description != null) {
 		$("#omschrijving").append("<b>Omschrijving:</b><br /><span>" + waypoint.location.description + "</span>");
 	}
+	
+	$("#link_toonOpKaart").on("tap", function() {
+		window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long;
+		//href="geo:38.897096,-77.036545"
+	});
 });	
 
 $("#page_waypoint").on("swiperight", function(event){
 	history.back();
 });
+
