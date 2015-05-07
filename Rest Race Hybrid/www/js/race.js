@@ -49,7 +49,7 @@ $("#btn_inchecken").on("tap", function(){
 			  
 		$.ajax({
 			type: "PUT",
-			url: restrace + "races/" + race._id + "/location/" + position.coords.latitude + "/" + position.coords.longitude,
+			url: restrace + "races/" + race._id + "/location/" + position.coords.latitude + "/" + position.coords.longitude + "?apikey=" + load("authKey")",
 			headers: {
 				Accept: "application/json"
 			},
@@ -57,11 +57,11 @@ $("#btn_inchecken").on("tap", function(){
 			success: function(data) {
 				if (data.checkedIn) {
 					toonToast("U bent ingecheckt.");
-					//playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+					playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
 				}
 				else {
 					toonToast("U bent niet ingecheckt.");
-					//playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+					playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
 				}
 			}
 		});
