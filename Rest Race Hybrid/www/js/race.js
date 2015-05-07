@@ -55,14 +55,15 @@ $("#btn_inchecken").on("tap", function(){
 			},
 			dataType: "json",
 			success: function(data) {
-				if (data.checkedIn == true) {
+				alert("Checked in: " + data.checkedIn);
+				/*if (data.checkedIn == true) {
 					toonToast("U bent ingecheckt.");
 					playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
 				}
 				else {
 					toonToast("U bent niet ingecheckt.");
 					playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
-				}
+				}*/
 			}
 		});
 	};
