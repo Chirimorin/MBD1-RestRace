@@ -49,7 +49,7 @@ $("#btn_inchecken").on("tap", function(){
 			  
 		$.ajax({
 			type: "PUT",
-			url: restrace + "races/" + race._id + "/location/ + position.coords.latitude + "/" + position.coords.longitude",
+			url: restrace + "races/" + race._id + "/location/" + position.coords.latitude + "/" + position.coords.longitude,
 			headers: {
 				Accept: "application/json"
 			},
