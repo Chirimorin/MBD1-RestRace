@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	alert("Device:  " + device.model);
+	alert("Device:  " + device.platform);
 	
 	var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));
 	var race = $.grep(allRaces, function(e){ return e._id == getUrlParameter("idRace"); })[0];
@@ -12,7 +12,15 @@ $(document).ready(function() {
 	}
 	
 	$("#link_toonOpKaart").on("tap", function() {
-		window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long; // Alleen android
+		if (device.platform == "Android") {
+			window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long; // Android
+		}
+		else if (device.platform == "iOS") {
+			window.location = "maps://maps.google.com/maps?daddr=" + waypoint.location.lat + "," + waypoint.location.long; // iOS
+		} 
+		else {
+			window.location = "http://maps.google.com/maps?daddr=" + waypoint.location.lat + "," + waypoint.location.long;
+		}
 	});
 		
 });	
