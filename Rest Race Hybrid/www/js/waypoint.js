@@ -1,4 +1,7 @@
 $(document).ready(function() {
+	
+	alert("Device: " + device.model);
+	
 	var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));
 	var race = $.grep(allRaces, function(e){ return e._id == getUrlParameter("idRace"); })[0];
 	var waypoint = $.grep(race.locations, function(e){ return e.location._id == getUrlParameter("idWaypoint"); })[0];
@@ -10,6 +13,8 @@ $(document).ready(function() {
 	
 	$("#link_toonOpKaart").on("tap", function() {
 		window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long; // Alleen android
+	});
+		
 });	
 
 $("#page_waypoint").on("swiperight", function(event){
