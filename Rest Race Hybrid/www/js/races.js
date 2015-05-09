@@ -20,8 +20,10 @@ function displayRaces() {
 					
 					aantalVisitedWaypoints = 0;
 					for(var j = 0; j < allRaces[i].locations.length; j++) {
-						if (load("visitedWaypoints").indexOf(allRaces[i].locations[j].location._id) != -1) {
-							aantalVisitedWaypoints++;
+						for(var k = 0; k < load("visitedWaypoints").length; k++) {
+							if(load("visitedWaypoints")[k].location == allRaces[i].locations[j].location._id) {
+								aantalVisitedWaypoints++;
+							}
 						}
 					}
 					

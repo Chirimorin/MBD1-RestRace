@@ -23,7 +23,14 @@ function displayWaypoints() {
 	var waypoints = "";
 	for(var i = 0; i < race.locations.length; i++) {
 		waypoints += 	"<li data-icon='carat-r'><a href='#' id=" + race.locations[i].location._id + " class='waypoint listItem'><span>" + race.locations[i].location.name + "</span>";
-		load("visitedWaypoints").indexOf(race.locations[i].location._id) != -1 ? waypoints += "<span class='status'>Ingecheckt</span></a></li>" : waypoints += "</a></li>"
+		
+		for(var j = 0; j < load("visitedWaypoints").length; j++) {
+			if(load("visitedWaypoints")[j].location == race.locations[i].location._id) {
+				 waypoints += "<span class='status'>Ingecheckt</span></a></li>";
+			}
+		}
+		
+		waypoints += "</a></li>"
 	}
 	$("#waypoints").append(waypoints).listview().listview("refresh");
 	
