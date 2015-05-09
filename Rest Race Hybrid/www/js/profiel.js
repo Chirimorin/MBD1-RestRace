@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	load("nickname") != "" ? $("#huidigeNickname").text(load("nickname")) : $("#huidigeNickname").text("<i>(Geen nickname)</i>");
+	load("nickname") != "" ? $("#huidigeNickname").text(load("nickname")) : $("#huidigeNickname").text("(Geen nickname)");
 	$("#nickname").val(load("nickname"));
 });
 

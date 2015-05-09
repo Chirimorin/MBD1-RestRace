@@ -1,3 +1,9 @@
-$("#menu_item_uitloggen").on("tap", function() {
-	window.location = "index.html";
+$(document).ready(function() {
+	
+	$("#toon_aantalIngecheckteWaypoints").val(load("toon_aantalIngecheckteWaypoints")).slider("refresh");
+	
+	$("#toon_aantalIngecheckteWaypoints").change(function() {
+		save("toon_aantalIngecheckteWaypoints", $("#toon_aantalIngecheckteWaypoints").val());
+	});
+	
 });
