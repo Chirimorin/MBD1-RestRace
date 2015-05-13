@@ -72,18 +72,16 @@ $("#btn_inchecken").on("tap", function(){
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 });
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady(){
-	function playAudio(url) {
-		var my_media = new Media(url,
-			function () {
-				//alert("playAudio():Audio Success");
-			},
-			function (err) {
-				//alert("playAudio():Audio Error: " + err);
-			}
-		);
-		my_media.play();
-	}
+function playAudio(url) {
+	var my_media = new Media(url,
+		function () {
+			//alert("playAudio():Audio Success");
+		},
+		function (err) {
+			//alert("playAudio():Audio Error: " + err);
+		}
+	);
+	my_media.play();
 }
+
 		
