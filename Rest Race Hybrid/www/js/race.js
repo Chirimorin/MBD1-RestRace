@@ -73,7 +73,7 @@ $("#btn_inchecken").on("tap", function(){
 });
 
 document.addEventListener("deviceready", onDeviceReady,false);
-function onDeviceReady(){
+function onDeviceReady() {
 	function playAudio(url) {
 		var my_media = new Media(url,
         function () {
@@ -85,5 +85,5 @@ function onDeviceReady(){
     );
     my_media.play();
 }
-}
+
 		
