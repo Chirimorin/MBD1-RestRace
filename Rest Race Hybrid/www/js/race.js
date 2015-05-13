@@ -1,5 +1,3 @@
-var scripts = document.getElementsByTagName("script");
-var file = scripts[scripts.length-1];
 var race = "";
 
 $(document).ready(function() {
@@ -57,11 +55,11 @@ $("#btn_inchecken").on("tap", function(){
 			dataType: "json",
 			success: function(data) {
 				if (data.checkedIn) {
-					playAudio(file + "sounds/success.mp3");
+					playAudio(getPhoneGapPath() + "sounds/success.mp3");
 					alert("U bent ingecheckt.");
 				}
 				else {
-					playAudio(file + "sounds/failure.mp3");
+					playAudio(getPhoneGapPath() + "sounds/failure.mp3");
 					alert("U bent niet ingecheckt.");
 				}
 			}
@@ -86,5 +84,13 @@ function playAudio(url) {
 	);
 	my_media.play();
 }
+
+function getPhoneGapPath() {
+
+    var path = window.location.pathname;
+    path = path.substr( path, path.length - 10 );
+    return 'file://' + path;
+
+};
 
 		
