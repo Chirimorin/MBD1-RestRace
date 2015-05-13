@@ -44,6 +44,7 @@ $("#page_race").on("swiperight", function(event){
 });
 
 $("#btn_inchecken").on("tap", function(){
+	
 	var onSuccess = function(position) {			  
 		$.ajax({
 			type: "PUT",
@@ -54,11 +55,11 @@ $("#btn_inchecken").on("tap", function(){
 			dataType: "json",
 			success: function(data) {
 				if (data.checkedIn) {
-					playAudio("../sounds/success.mp3");
+					playAudio(getPath() + "sounds/success.mp3");
 					alert("U bent ingecheckt.");
 				}
 				else {
-					playAudio("../sounds/failure.mp3");
+					playAudio(getPath() + "sounds/failure.mp3");
 					alert("U bent niet ingecheckt.");
 				}
 			}
