@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	alert("Device:  " + device.platform);
+	alert("Device:  " + window.device.platform);
 	
 	var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));
 	var race = $.grep(allRaces, function(e){ return e._id == getUrlParameter("idRace"); })[0];
