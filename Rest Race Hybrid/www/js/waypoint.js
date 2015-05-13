@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	alert("Device:  " + window.device.platform);
+	
 	
 	var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));
 	var race = $.grep(allRaces, function(e){ return e._id == getUrlParameter("idRace"); })[0];
@@ -28,4 +28,9 @@ $(document).ready(function() {
 $("#page_waypoint").on("swiperight", function(event){
 	history.back();
 });
+
+document.addEventListener("deviceready", onDeviceReady,false);
+function onDeviceReady(){
+	alert("Device:  " + window.device.platform);
+}
 
