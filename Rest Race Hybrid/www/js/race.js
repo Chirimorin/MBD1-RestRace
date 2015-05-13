@@ -1,3 +1,5 @@
+var scripts = document.getElementsByTagName("script");
+var file = scripts[scripts.length-1];
 var race = "";
 
 $(document).ready(function() {
@@ -7,12 +9,12 @@ $(document).ready(function() {
 	$("#naam").text(race.name);
 	
 	var start = new Date(race.startTime);
-	$("#startTijd").text(	('0' + start.getDate()).slice(-2) + "-" + start.getMonth() + 1 + "-" + start.getFullYear() + " " + 
+	$("#startTijd").text(	('0' + start.getDate()).slice(-2) + "-" + ('0' + (start.getMonth() + 1)).slice(-2) + "-" + start.getFullYear() + " " + 
 							('0' + start.getHours()).slice(-2) + ":" + ('0' + start.getMinutes()).slice(-2));
 	
 	if (race.endTime != null) {
 		var eind = new Date(race.endTime);
-		$("#eindTijd").text(('0' + eind.getDate()).slice(-2) + "-" + eind.getMonth() + 1 + "-" + eind.getFullYear() + " " + 
+		$("#eindTijd").text(('0' + eind.getDate()).slice(-2) + "-" + ('0' + (eind.getMonth() + 1)).slice(-2) + "-" + eind.getFullYear() + " " + 
 							('0' + eind.getHours()).slice(-2) + ":" + ('0' + eind.getMinutes()).slice(-2));
 	}
 	
@@ -55,11 +57,11 @@ $("#btn_inchecken").on("tap", function(){
 			dataType: "json",
 			success: function(data) {
 				if (data.checkedIn) {
-					playAudio(getPath() + "sounds/success.mp3");
+					playAudio(file + "sounds/success.mp3");
 					alert("U bent ingecheckt.");
 				}
 				else {
-					playAudio(getPath() + "sounds/failure.mp3");
+					playAudio(file + "sounds/failure.mp3");
 					alert("U bent niet ingecheckt.");
 				}
 			}
