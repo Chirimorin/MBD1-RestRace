@@ -54,13 +54,11 @@ $("#btn_inchecken").on("tap", function(){
 			dataType: "json",
 			success: function(data) {
 				if (data.checkedIn) {
-					//playAudio("../sounds/success.mp3");
-					playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+					playAudio("../sounds/success.mp3");
 					alert("U bent ingecheckt.");
 				}
 				else {
-					//playAudio("../sounds/failure.mp3");
-					playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+					playAudio("../sounds/failure.mp3");
 					alert("U bent niet ingecheckt.");
 				}
 			}
@@ -77,10 +75,10 @@ $("#btn_inchecken").on("tap", function(){
 function playAudio(url) {
 	var my_media = new Media(url,
 		function () {
-			//alert("playAudio():Audio Success");
+			alert("playAudio():Audio Success");
 		},
 		function (err) {
-			//alert("playAudio():Audio Error: " + err);
+			alert("playAudio():Audio Error: " + err);
 		}
 	);
 	my_media.play();
