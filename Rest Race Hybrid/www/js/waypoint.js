@@ -1,3 +1,5 @@
+var device = "";
+
 $(document).ready(function() {
 	
 	var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));
@@ -10,10 +12,10 @@ $(document).ready(function() {
 	}
 	
 	$("#link_toonOpKaart").on("tap", function() {
-		if (window.device.platform == "Android") {
+		if (device == "Android") {
 			window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long; // Android
 		}
-		else if (window.device.platform == "iOS") {
+		else if (device == "iOS") {
 			window.location = "maps://maps.google.com/maps?daddr=" + waypoint.location.lat + "," + waypoint.location.long; // iOS
 		} 
 		else {
@@ -27,8 +29,8 @@ $("#page_waypoint").on("swiperight", function(event){
 	history.back();
 });
 
-/*document.addEventListener("deviceready", onDeviceReady,false);
+document.addEventListener("deviceready", onDeviceReady,false);
 function onDeviceReady(){
-	alert("Device:  " + window.device.platform);
-}*/
+	device = window.device.platform;
+}
 
