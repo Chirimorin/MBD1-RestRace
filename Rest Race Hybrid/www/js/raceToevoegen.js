@@ -21,7 +21,7 @@ $("#btn_toevoegen").on("tap", function() {
 				window.location = "races.html";
 			},
 			error: function() {
-				toonToast("Code is ongeldig.");
+				alert("Code is ongeldig.");
 			}
 		});
 	}

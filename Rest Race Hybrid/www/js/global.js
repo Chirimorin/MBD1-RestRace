@@ -23,7 +23,7 @@ function getUrlParameter(parameter){
 } 
 
 // Toont kort een melding
-function toonToast(msg){
+/*function toonToast(msg){
 	$("<div class='ui-loader ui-overlay-shadow ui-body-e ui-corner-all'><h3>" + msg + "</h3></div>")
 	.css({ 
 		display: "block", 
@@ -40,4 +40,4 @@ function toonToast(msg){
 	.fadeOut( 400, function(){
 		$(this).remove();
 	});
-}
+}*/

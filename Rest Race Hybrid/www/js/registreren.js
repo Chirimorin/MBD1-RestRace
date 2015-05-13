@@ -18,7 +18,7 @@ $("#btn_registreren").on("tap", function() {
 					window.location = "races.html";
 				}
 				else {
-					toonToast("Registreren mislukt.");
+					alert("Registreren mislukt.");
 					$("#wachtwoord").val("");
 				}
 			}

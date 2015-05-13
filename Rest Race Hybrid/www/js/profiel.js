@@ -19,10 +19,10 @@ $("#btn_opslaan").on("tap", function() {
 		success: function(data) {
 			$("#huidigeNickname").text($("#nickname").val());
 			save("code", $("#nickname").val());
-			toonToast("Nickname opgeslagen.");
+			alert("Nickname opgeslagen.");
 		},
 		error: function() {
-			toonToast("Nickname wijzigen mislukt.");
+			alert("Nickname wijzigen mislukt.");
 		}
 	});
 	

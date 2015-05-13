@@ -1,3 +1,9 @@
+$(document).on("pagebeforeshow", function( event ){ 
+	if (load("authKey") != "") {
+		window.location = "races.html";
+	}
+});
+
 $("#btn_inloggen").on("tap", function() {
 
 	if ($("#emailadres").val() != "" || $("#wachtwoord").val() != "") {
@@ -20,7 +26,7 @@ $("#btn_inloggen").on("tap", function() {
 					window.location = "races.html";
 				}
 				else {
-					toonToast("E-mailadres of wachtwoord is onjuist.");
+					alert("E-mailadres en wachtwoord combinatie onjuist.");
 					$("#wachtwoord").val("");
 				}
 			}
