@@ -55,12 +55,11 @@ $("#btn_inchecken").on("tap", function(){
 			dataType: "json",
 			success: function(data) {
 				if (data.checkedIn) {
-					playAudio(getPhoneGapPath() + "sounds/success.mp3");
+					playAudio(getPhoneGapPath() + "/sounds/success.mp3");
 					alert("U bent ingecheckt.");
 				}
 				else {
 					playAudio(getPhoneGapPath() + "/sounds/failure.mp3");
-					//playAudio("/android_asset/www/sounds/failure.mp3");
 					alert("U bent niet ingecheckt.");
 				}
 			}
@@ -75,23 +74,14 @@ $("#btn_inchecken").on("tap", function(){
 });
 
 function playAudio(url) {
-	var my_media = new Media(url,
-		function () {
-			alert("playAudio():Audio Success");
-		},
-		function (err) {
-			alert("playAudio():Audio Error: " + err);
-		}
-	);
+	var my_media = new Media(url);
 	my_media.play();
 }
 
 function getPhoneGapPath() {
-
     var path = window.location.pathname;
     path = path.substr( path, path.length - 10 );
     return 'file://' + path;
-
 };
 
 		
