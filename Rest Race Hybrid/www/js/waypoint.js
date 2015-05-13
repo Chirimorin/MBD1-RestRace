@@ -29,7 +29,7 @@ $("#page_waypoint").on("swiperight", function(event){
 	history.back();
 });
 
-document.addEventListener("deviceready", onDeviceReady,false);
+document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
 	device = window.device.platform;
 }
