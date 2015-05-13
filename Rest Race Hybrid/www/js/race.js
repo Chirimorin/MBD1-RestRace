@@ -61,7 +61,7 @@ $("#btn_inchecken").on("tap", function(){
 				}
 				else {
 					//playAudio(getPhoneGapPath() + "sounds/failure.mp3");
-					playAudio(getPhoneGapPath() + "sounds/test.wav"
+					playAudio(getPhoneGapPath() + "sounds/test.wav");
 					alert("U bent niet ingecheckt.");
 				}
 			}
