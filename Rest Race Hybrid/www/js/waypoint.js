@@ -8,7 +8,7 @@ $(document).ready(function() {
 	
 	$("#naam").text(waypoint.location.name);
 	if (waypoint.location.description != null) {
-		$("#omschrijving").append("<b>Omschrijving:</b><br /><span>" + waypoint.location.description + "</span>");
+		$("#omschrijving").append("<b>Omschrijving:</b><br /><span>" + waypoint.location.description + "</span><br /><br />");
 	}
 	
 	$("#link_toonOpKaart").on("tap", function() {

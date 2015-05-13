@@ -54,11 +54,13 @@ $("#btn_inchecken").on("tap", function(){
 			dataType: "json",
 			success: function(data) {
 				if (data.checkedIn) {
-					playAudio("sounds/success.mp3");
+					//playAudio("sounds/success.mp3");
+					playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
 					alert("U bent ingecheckt.");
 				}
 				else {
-					playAudio("sounds/failure.mp3");
+					//playAudio("sounds/failure.mp3");
+					playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
 					alert("U bent niet ingecheckt.");
 				}
 			}
