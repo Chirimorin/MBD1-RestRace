@@ -31,7 +31,7 @@ $("#btn_opslaan").on("tap", function() {
 		success: function(data) {
 			$.mobile.loading("hide");
 			
-			$("#huidigeNickname").text($("#nickname").val());
+			$("#nickname").val() != "" ? $("#huidigeNickname").text($("#nickname").val()) : $("#huidigeNickname").text("(Geen nickname)");
 			save("nickname", $("#nickname").val());
 			alert("Nickname opgeslagen.");
 		},

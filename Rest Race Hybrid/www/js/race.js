@@ -16,6 +16,10 @@ $(document).ready(function() {
 							('0' + eind.getHours()).slice(-2) + ":" + ('0' + eind.getMinutes()).slice(-2));
 	}
 	
+	$("#link_racePagina").on("tap", function() {
+		window.location = restrace + "races/" + race._id + "?apikey=" + load("authKey");
+	});
+	
 	displayWaypoints();	
 });		
 
