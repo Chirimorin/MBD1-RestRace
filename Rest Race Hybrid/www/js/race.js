@@ -45,6 +45,14 @@ $("#page_race").on("swiperight", function(event){
 
 $("#btn_inchecken").on("tap", function(){
 	
+	$.mobile.loading( "show", {
+            text: msgText,
+            textVisible: textVisible,
+            theme: theme,
+            textonly: textonly,
+            html: html
+    });
+	
 	var onSuccess = function(position) {			  
 		$.ajax({
 			type: "PUT",
@@ -54,6 +62,7 @@ $("#btn_inchecken").on("tap", function(){
 			},
 			dataType: "json",
 			success: function(data) {
+				$.mobile.loading( "hide" );
 				if (data.checkedIn) {
 					playAudio(getPhoneGapPath() + "/sounds/success.mp3");
 					alert("U bent ingecheckt.");
@@ -67,6 +76,7 @@ $("#btn_inchecken").on("tap", function(){
 	};
 	
 	function onError(error) {
+		$.mobile.loading( "hide" );
 		alert("Geen locatie gevonden.");
 	}
 

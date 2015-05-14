@@ -1,4 +1,7 @@
 $(document).ready(function() {
+	if (load("toon_aantalIngecheckteWaypoints") == "") {
+		save("toon_aantalIngecheckteWaypoints", "Aan");
+	}
 	displayRaces();
 });
 
