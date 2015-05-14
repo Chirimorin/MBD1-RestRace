@@ -1,5 +1,5 @@
 $(document).on("pagebeforecreate", function( event ){ 
-	if (load("authKey") != "") {
+	if (typeof load("authKey") !== 'undefined' && load("authKey") !== null && load("authKey") != "") {
 		window.location = "races.html";
 	}
 });
