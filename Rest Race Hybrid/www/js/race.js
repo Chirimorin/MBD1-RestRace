@@ -1,10 +1,13 @@
 var race = "";
 
-$(document).ready(function() {
+$("#page_race").on('pagebeforeshow', function(e, data){ 
+
+	$("#waypoints").empty();
+
 	var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));
-	race = $.grep(allRaces, function(e){ return e._id == getUrlParameter("id"); })[0];
+	race = $.grep(allRaces, function(e){ return e._id == load("race_id"); })[0];
 	
-	$("#naam").text(race.name);
+	$("#naam_race").text(race.name);
 	
 	var start = new Date(race.startTime);
 	$("#startTijd").text(	('0' + start.getDate()).slice(-2) + "-" + ('0' + (start.getMonth() + 1)).slice(-2) + "-" + start.getFullYear() + " " + 
@@ -39,7 +42,9 @@ function displayWaypoints() {
 	$("#waypoints").append(waypoints).listview().listview("refresh");
 	
 	$(".waypoint").on("tap", function() {
-		window.location = "waypoint.html?idRace=" + race._id + "&idWaypoint=" + $(this).attr("id");
+		//window.location = "waypoint.html?idRace=" + race._id + "&idWaypoint=" + $(this).attr("id");
+		save("waypoint_id", $(this).attr("id"));
+		$.mobile.changePage("#page_waypoint");
 	});
 }
 
@@ -93,11 +98,5 @@ function playAudio(url) {
 	var my_media = new Media(url);
 	my_media.play();
 }
-
-function getPhoneGapPath() {
-    var path = window.location.pathname;
-    path = path.substr( path, path.length - 10 );
-    return 'file://' + path;
-};
 
 		

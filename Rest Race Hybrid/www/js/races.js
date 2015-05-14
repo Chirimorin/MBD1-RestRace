@@ -52,7 +52,8 @@ function displayRaces() {
 				$("#races").append(races).listview().listview("refresh");
 				
 				$(".race").on("tap", function() {
-					window.location = "race.html?id=" + $(this).attr("id");
+					save("race_id", $(this).attr("id"));
+					$.mobile.changePage("#page_race");
 				});			
 			}
 			else {

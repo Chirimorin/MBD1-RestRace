@@ -1,12 +1,12 @@
 var device = "";
 
-$(document).ready(function() {
+$("#page_waypoint").on('pagebeforeshow', function(e, data){ 
 	
 	var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));
-	var race = $.grep(allRaces, function(e){ return e._id == getUrlParameter("idRace"); })[0];
-	var waypoint = $.grep(race.locations, function(e){ return e.location._id == getUrlParameter("idWaypoint"); })[0];
+	var race = $.grep(allRaces, function(e){ return e._id == load("race_id"); })[0];
+	var waypoint = $.grep(race.locations, function(e){ return e.location._id == load("waypoint_id"); })[0];
 	
-	$("#naam").text(waypoint.location.name);
+	$("#naam_waypoint").text(waypoint.location.name);
 	if (waypoint.location.description != null) {
 		$("#omschrijving").append("<b>Omschrijving:</b><br /><span>" + waypoint.location.description + "</span><br /><br />");
 	}

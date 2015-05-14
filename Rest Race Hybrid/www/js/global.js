@@ -1,12 +1,4 @@
 restrace = "https://restrace2.herokuapp.com/";
-	
-// Voor loading spinner
-var $this = $(this),
-	theme = $this.jqmData("theme") || $.mobile.loader.prototype.options.theme,
-	msgText = $this.jqmData("msgtext") || $.mobile.loader.prototype.options.text,
-	textVisible = $this.jqmData("textvisible") || $.mobile.loader.prototype.options.textVisible,
-	textonly = !!$this.jqmData("textonly");
-	html = $this.jqmData("html") || "";
 
 // Slaat een object op in localstorage.
 function save(name,value) {
@@ -17,6 +9,21 @@ function save(name,value) {
 function load(name) {
     return JSON.parse(localStorage.getItem(name));
 }
+
+// Get path
+function getPhoneGapPath() {
+    var path = window.location.pathname;
+    path = path.substr( path, path.length - 10 );
+    return 'file://' + path;
+};
+
+// Voor loading spinner
+var $this = $(this),
+	theme = $this.jqmData("theme") || $.mobile.loader.prototype.options.theme,
+	msgText = $this.jqmData("msgtext") || $.mobile.loader.prototype.options.text,
+	textVisible = $this.jqmData("textvisible") || $.mobile.loader.prototype.options.textVisible,
+	textonly = !!$this.jqmData("textonly");
+	html = $this.jqmData("html") || "";
 
 // Geeft de waarde van een parameter in een URL terug
 function getUrlParameter(parameter){

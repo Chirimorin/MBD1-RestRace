@@ -1,9 +1,5 @@
 $(document).bind("mobileinit", function(){
 	$.mobile.allowCrossDomainPages = "true";
-	//$.mobile.defaultPageTransition = "slide";
-	
-	$.extend($.mobile, {
-        defaultPageTransition: 'slide'
-    });
+	$.mobile.defaultPageTransition = "slide";
 });
 	
