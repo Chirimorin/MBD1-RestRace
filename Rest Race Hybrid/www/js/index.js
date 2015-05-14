@@ -1,4 +1,4 @@
-$(document).on("pagebeforeshow", function( event ){ 
+$(document).on("pagebeforecreate", function( event ){ 
 	if (load("authKey") != "") {
 		window.location = "races.html";
 	}
