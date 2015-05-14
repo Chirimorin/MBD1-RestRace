@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	
+});
+
+$(document).on("pagebeforeshow", function( event ) { 
 	load("nickname") != "" ? $("#huidigeNickname").text(load("nickname")) : $("#huidigeNickname").text("(Geen nickname)");
 	$("#nickname").val(load("nickname"));
 });
@@ -28,7 +32,7 @@ $("#btn_opslaan").on("tap", function() {
 			$.mobile.loading("hide");
 			
 			$("#huidigeNickname").text($("#nickname").val());
-			save("code", $("#nickname").val());
+			save("nickname", $("#nickname").val());
 			alert("Nickname opgeslagen.");
 		},
 		error: function() {

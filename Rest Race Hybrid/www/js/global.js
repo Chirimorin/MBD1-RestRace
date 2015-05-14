@@ -1,5 +1,5 @@
 restrace = "https://restrace2.herokuapp.com/";
-
+	
 // Voor loading spinner
 var $this = $(this),
 	theme = $this.jqmData("theme") || $.mobile.loader.prototype.options.theme,

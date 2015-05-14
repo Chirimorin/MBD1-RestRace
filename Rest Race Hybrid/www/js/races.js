@@ -1,7 +1,8 @@
+if (typeof load("toon_aantalIngecheckteWaypoints") === 'undefined' && load("toon_aantalIngecheckteWaypoints") === null) {
+	save("toon_aantalIngecheckteWaypoints", "Aan");
+}
+
 $(document).ready(function() {
-	if (load("toon_aantalIngecheckteWaypoints") == "") {
-		save("toon_aantalIngecheckteWaypoints", "Aan");
-	}
 	displayRaces();
 });
 
