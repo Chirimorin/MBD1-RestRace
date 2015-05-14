@@ -1,5 +1,13 @@
 $("#btn_registreren").on("tap", function() {
 	
+	$.mobile.loading("show", {
+		text: msgText,
+		textVisible: textVisible,
+		theme: theme,
+		textonly: textonly,
+		html: html
+    });
+	
 	if ($("#emailadres").val() != "" || $("#wachtwoord").val() != "") {
 		$.ajax({
 			type: "POST",
@@ -13,6 +21,8 @@ $("#btn_registreren").on("tap", function() {
 				"password": $("#wachtwoord").val()
 			},
 			success: function(data) {
+				$.mobile.loading("hide");
+				
 				if (data.authKey) {
 					save("authKey", data.authKey);
 					window.location = "races.html";

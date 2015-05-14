@@ -7,6 +7,14 @@ $(document).ready(function() {
 
 function displayRaces() {
 	
+	$.mobile.loading("show", {
+		text: msgText,
+		textVisible: textVisible,
+		theme: theme,
+		textonly: textonly,
+		html: html
+    });
+	
 	$.ajax({
 		type: "GET",
 		url: restrace + "races?apikey=" + load("authKey") + "&type=participant&pageSize=100",
@@ -14,6 +22,7 @@ function displayRaces() {
 			Accept: "application/json"
 		},
 		success: function(allRaces) {
+			$.mobile.loading("hide");
 			
 			sessionStorage.setItem("allRaces", JSON.stringify(allRaces));
 			

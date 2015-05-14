@@ -6,6 +6,14 @@ $(document).ready(function() {
 
 $("#btn_opslaan").on("tap", function() {
 	
+	$.mobile.loading("show", {
+		text: msgText,
+		textVisible: textVisible,
+		theme: theme,
+		textonly: textonly,
+		html: html
+    });
+	
 	$.ajax({
 		type: "PUT",
 		url: restrace + "users/nickname?apikey=" + load("authKey"),
@@ -17,11 +25,15 @@ $("#btn_opslaan").on("tap", function() {
 		},
 		dataType: "json",
 		success: function(data) {
+			$.mobile.loading("hide");
+			
 			$("#huidigeNickname").text($("#nickname").val());
 			save("code", $("#nickname").val());
 			alert("Nickname opgeslagen.");
 		},
 		error: function() {
+			$.mobile.loading("hide");
+			
 			alert("Nickname wijzigen mislukt.");
 		}
 	});

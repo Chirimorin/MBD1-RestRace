@@ -8,6 +8,14 @@ $(window).unload(function(){
 
 $("#btn_toevoegen").on("tap", function() {
 	
+	$.mobile.loading("show", {
+		text: msgText,
+		textVisible: textVisible,
+		theme: theme,
+		textonly: textonly,
+		html: html
+    });
+	
 	if ($("#code").val() != "") {
 		$.ajax({
 			type: "PUT",
@@ -17,10 +25,14 @@ $("#btn_toevoegen").on("tap", function() {
 			},
 			dataType: "json",
 			success: function(data) {
+				$.mobile.loading("hide");
+				
 				$("#code").val("");
 				window.location = "races.html";
 			},
 			error: function() {
+				$.mobile.loading("hide");
+				
 				alert("Code is ongeldig.");
 			}
 		});

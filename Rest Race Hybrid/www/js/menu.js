@@ -17,6 +17,15 @@ $(document).one('pagebeforecreate', function () {
 	});
 
 	$("#menu_item_uitloggen").on("tap", function() {
+		
+		/*$.mobile.loading("show", {
+			text: msgText,
+			textVisible: textVisible,
+			theme: theme,
+			textonly: textonly,
+			html: html
+		});
+	
 		$.ajax({
 			type: "GET",
 			url: restrace + "logout",
@@ -24,14 +33,28 @@ $(document).one('pagebeforecreate', function () {
 				Accept: "application/json"
 			},
 			success: function() {
+				$.mobile.loading("hide");
+				
 				save("authKey", "");
 				save("nickname", "");
 				save("visitedWaypoints", "");
 				save("code", "");
+				
 				sessionStorage.setItem("allRaces", "");
+				
 				window.location = "index.html";
 			}
-		});
+		});*/
+		
+		save("authKey", "");
+		save("nickname", "");
+		save("visitedWaypoints", "");
+		save("code", "");
+		
+		sessionStorage.setItem("allRaces", "");
+		
+		window.location = "index.html";
+				
 	});
 
 	$("#menu").on("tap", function() {

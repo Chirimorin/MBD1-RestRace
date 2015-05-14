@@ -5,6 +5,14 @@ $(document).on("pagebeforeload", function( event ){
 });
 
 $("#btn_inloggen").on("tap", function() {
+	
+	$.mobile.loading("show", {
+		text: msgText,
+		textVisible: textVisible,
+		theme: theme,
+		textonly: textonly,
+		html: html
+    });
 
 	if ($("#emailadres").val() != "" || $("#wachtwoord").val() != "") {
 		$.ajax({
@@ -19,6 +27,8 @@ $("#btn_inloggen").on("tap", function() {
 				"password": $("#wachtwoord").val()
 			},
 			success: function(data) {
+				$.mobile.loading("hide");
+				
 				if (data.authKey) {
 					save("authKey", data.authKey);
 					data.nickname != null ? save("nickname", data.nickname) : save("nickname", "");
