@@ -1,9 +1,13 @@
-if (typeof load("toon_aantalIngecheckteWaypoints") === 'undefined' && load("toon_aantalIngecheckteWaypoints") === null) {
-	save("toon_aantalIngecheckteWaypoints", "Aan");
-}
-
 $(document).ready(function() {
+	if (typeof load("toon_aantalIngecheckteWaypoints") === 'undefined' && load("toon_aantalIngecheckteWaypoints") === null) {
+		save("toon_aantalIngecheckteWaypoints", "Aan");
+	}
+
 	displayRaces();
+	
+	$("#btn_race_toevoegen").on("tap", function() {
+		window.location = "raceToevoegen.html";
+	});
 });
 
 function displayRaces() {
@@ -66,6 +70,4 @@ function displayRaces() {
 
 }
 
-$("#btn_race_toevoegen").on("tap", function() {
-	window.location = "raceToevoegen.html";
-});
+

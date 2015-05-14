@@ -2,7 +2,7 @@
 	-webkit-backface-visibility: hidden; 
 }
 
-@media all and (min-width: 50em){
+/*@media all and (min-width: 50em){
 	#page_races {
 		display: block;
 		float: left;
@@ -18,7 +18,7 @@
 		margin-left: 20%;
 		position: relative;
 	}
-}
+}*/
 
 .header {
 	background-color: #303F9F !important;

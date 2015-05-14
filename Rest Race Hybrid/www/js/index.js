@@ -1,8 +1,8 @@
-$(document).on("pagebeforecreate", function( event ){ 
+/*$(document).on("pagebeforecreate", function( event ){ 
 	if (typeof load("authKey") !== 'undefined' && load("authKey") !== null && load("authKey") != "") {
 		window.location = "races.html";
 	}
-});
+});*/
 
 $("#btn_inloggen").on("tap", function() {
 	

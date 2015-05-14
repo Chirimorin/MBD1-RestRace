@@ -17,7 +17,6 @@
 
 		<link rel="stylesheet" type="text/css" href="css/global.css" />
 		<script src="js/global.js"></script>
-		<script src="js/menu.js"></script>
 		
         <title>RestRace</title>
     </head>
@@ -28,13 +27,14 @@
 			<div data-role="header" data-id="header" class="header">
 				<a href="#menu" data-icon="bars" data-iconpos="notext" id="btn_menu" class="icon"></a>
 				<h1>Races</h1>
-				<a href="#" data-transition="slide" data-icon="plus" data-iconpos="notext" id="btn_race_toevoegen" class="ui-btn-right icon"></a>
+				<a href="#" data-icon="plus" data-iconpos="notext" rel="external" id="btn_race_toevoegen" class="ui-btn-right icon"></a>
 			</div>
 
 			<div data-role="main" class="ui-content">
 				<ul data-role="listview" data-inset="true" id="races"></ul>
 			</div>
-
+			
+			<script src="js/menu.js"></script>
 			<script src="js/races.js"></script>
 		</div>
 		
