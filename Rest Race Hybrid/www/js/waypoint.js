@@ -12,6 +12,7 @@ $(document).on("pagebeforeshow", "#page_waypoint", function(){
 	var waypoint = $.grep(race.locations, function(e){ return e.location._id == load("waypoint_id"); })[0]; // Haalt het goede waypoint uit de waypoint van de race
 	
 	$("#naam_waypoint").text(waypoint.location.name);
+	$("#omschrijving").empty();
 	if (waypoint.location.description != null && waypoint.location.description != "") {
 		$("#omschrijving").append("<b>Omschrijving:</b><br /><span>" + waypoint.location.description + "</span><br /><br />");
 	}
