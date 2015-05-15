@@ -9,7 +9,8 @@ $(document).one('pagebeforeshow', function () {
 	});
 
 	$("#menu_item_profiel").on("tap", function() {
-		window.location = "profiel.html";
+		//window.location = "profiel.html";
+		$.mobile.changePage("profiel.html");
 	});
 
 	$("#menu_item_settings").on("tap", function() {

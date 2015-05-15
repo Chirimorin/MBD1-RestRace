@@ -49,7 +49,7 @@ function displayWaypoints() {
 }
 
 $("#page_race").on("swiperight", function(event){
-    window.location = "races.html";
+    history.back();
 });
 
 $("#btn_inchecken").on("tap", function(){

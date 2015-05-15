@@ -4,6 +4,10 @@
 	}
 });*/
 
+$(document).ready(function() {
+	$("#page_inloggen").load("inloggen.html");
+});
+
 $("#btn_inloggen").on("tap", function() {
 	
 	$.mobile.loading("show", {
@@ -46,5 +50,5 @@ $("#btn_inloggen").on("tap", function() {
 });
 
 $("#btn_registreren").on("tap", function() {
-	window.location = "registreren.html";
+	$.mobile.changePage("#page_registreren");
 });

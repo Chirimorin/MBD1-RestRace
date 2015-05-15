@@ -7,6 +7,7 @@ $(document).ready(function() {
 	
 	$("#btn_race_toevoegen").on("tap", function() {
 		window.location = "raceToevoegen.html";
+		//$.mobile.changePage("raceToevoegen.html");
 	});
 });
 

@@ -39,3 +39,7 @@ $("#btn_toevoegen").on("tap", function() {
 	}
 
 });
+
+$("#page_race_toevoegen").on("swiperight", function(event){
+	history.back();
+});

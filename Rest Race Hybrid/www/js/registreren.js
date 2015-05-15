@@ -1,4 +1,4 @@
-$("#btn_registreren").on("tap", function() {
+$("#registreren").on("tap", function() {
 	
 	$.mobile.loading("show", {
 		text: msgText,
@@ -35,4 +35,8 @@ $("#btn_registreren").on("tap", function() {
 		});
 	}
 
-})
+});
+
+$("#page_registreren").on("swiperight", function(event){
+	history.back();
+});
