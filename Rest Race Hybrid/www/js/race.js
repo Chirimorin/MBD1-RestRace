@@ -52,8 +52,7 @@ function displayWaypoints() {
 	});
 }
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady(){
+
 	$("#btn_inchecken").on("tap", function(){
 		
 		// Toont loading spinner
@@ -103,7 +102,7 @@ function onDeviceReady(){
 	$("#page_race").off("swiperight").on("swiperight", function(event){
 		history.back();
 	});
-}
+
 
 function playAudio(url) {
 	var my_media = new Media(url);
