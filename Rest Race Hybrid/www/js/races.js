@@ -1,7 +1,5 @@
 $(document).on("pagebeforeshow", "#page_races", function(){
 	
-	$("#races").empty();
-	
 	if (load("toon_aantalIngecheckteWaypoints") == null && load("toon_aantalIngecheckteWaypoints") == "") {
 		save("toon_aantalIngecheckteWaypoints", "Aan");
 	}
@@ -21,6 +19,8 @@ $(document).on("pagebeforeshow", "#page_races", function(){
 });
 
 function displayRaces() {
+	
+	$("#races").empty();
 	
 	// Toont loading spinner
 	$.mobile.loading("show", {
