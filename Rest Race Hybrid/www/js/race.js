@@ -52,7 +52,8 @@ function displayWaypoints() {
 	});
 }
 
-
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady(){
 	$("#btn_inchecken").on("tap", function(){
 		
 		// Toont loading spinner
@@ -82,8 +83,9 @@ function displayWaypoints() {
 						displayWaypoints();
 					}
 					else {
-						playAudio(getPhoneGapPath() + "/sounds/failure.mp3");
+						//playAudio(getPhoneGapPath() + "/sounds/failure.mp3");
 						alert("U bent niet ingecheckt.");
+						alert(getPhoneGapPath() + "/sounds/failure.mp3");
 					}
 				}
 			});
@@ -102,7 +104,7 @@ function displayWaypoints() {
 	$("#page_race").off("swiperight").on("swiperight", function(event){
 		history.back();
 	});
-
+}
 
 function playAudio(url) {
 	var my_media = new Media(url);
