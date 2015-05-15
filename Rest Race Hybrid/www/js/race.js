@@ -79,7 +79,7 @@ function onDeviceReady(){
 					if (data.checkedIn) {
 						playAudio(getPhoneGapPath() + "/sounds/success.mp3");
 						alert("U bent ingecheckt.");
-						save(visitedWaypoints, data.locations);
+						save("visitedWaypoints", data.locations);
 						displayWaypoints();
 					}
 					else {
