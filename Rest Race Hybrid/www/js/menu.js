@@ -27,7 +27,7 @@ $(document).one('pagebeforeshow', function () {
 		
 		sessionStorage.setItem("allRaces", "");
 		
-		$.mobile.changePage("index.html");		
+		$.mobile.changePage("index.html", {reverse: true});		
 	});
 
 	// Sluit menu als er op wordt geklikt
