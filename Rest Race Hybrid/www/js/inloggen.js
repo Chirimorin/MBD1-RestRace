@@ -27,6 +27,9 @@ $(document).ready(function() {
 					$.mobile.loading("hide"); // Verbergt loading spinner
 					
 					if (data.authKey) {
+						$("#emailadres").val("");
+						$("#wachtwoord").val("");
+						
 						save("authKey", data.authKey);
 						data.nickname != null ? save("nickname", data.nickname) : save("nickname", "");
 						save("visitedWaypoints", data.visitedLocations);
