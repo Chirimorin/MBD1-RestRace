@@ -1,18 +1,24 @@
-$(document).ready(function() {
-	if (typeof load("toon_aantalIngecheckteWaypoints") === 'undefined' && load("toon_aantalIngecheckteWaypoints") === null) {
-		save("toon_aantalIngecheckteWaypoints", "Aan");
-	}
-
+$(document).on("pagebeforeshow", "#page_races", function(){
+	
+	$("#races").empty();
+	
 	displayRaces();
 	
-	$("#btn_race_toevoegen").on("tap", function() {
-		window.location = "raceToevoegen.html";
-		//$.mobile.changePage("raceToevoegen.html");
+	// Toont race toevoegen pagina
+	$("#race_toevoegen").on("tap", function() {
+		$.mobile.changePage("#page_race_toevoegen");
 	});
+	
+	// Swipe om menu te openen
+	$("#page_races").off("swiperight").on("swiperight", function(event){
+		$("#menu").panel("open");
+	});
+
 });
 
 function displayRaces() {
 	
+	// Toont loading spinner
 	$.mobile.loading("show", {
 		text: msgText,
 		textVisible: textVisible,
@@ -28,14 +34,15 @@ function displayRaces() {
 			Accept: "application/json"
 		},
 		success: function(allRaces) {
-			$.mobile.loading("hide");
+			$.mobile.loading("hide"); // Verbergt loading spinner
 			
-			sessionStorage.setItem("allRaces", JSON.stringify(allRaces));
+			sessionStorage.setItem("allRaces", JSON.stringify(allRaces)); // Slaat opgehaalde races op
 			
 			if (allRaces.length > 0) {
 				var races = "";
 				for(var i = 0; i < allRaces.length; i++) {
 					
+					// Bepaalt het aantal visited waypoint per race
 					aantalVisitedWaypoints = 0;
 					for(var j = 0; j < allRaces[i].locations.length; j++) {
 						for(var k = 0; k < load("visitedWaypoints").length; k++) {
@@ -46,7 +53,8 @@ function displayRaces() {
 					}
 					
 					races += 	"<li data-icon='carat-r'><a href='#' id=" + allRaces[i]._id + " class='race listItem'>" + allRaces[i].name;
-								
+					
+					// Toont het afhankelijk van de setting het aantal visited waypoints wel of niet
 					if (load("toon_aantalIngecheckteWaypoints") == "Aan") {
 						races += "<br/ ><span class='tekst'>" + aantalVisitedWaypoints + "/" + allRaces[i].locations.length + " waypoints</span>";
 					}
@@ -58,7 +66,7 @@ function displayRaces() {
 				
 				$(".race").on("tap", function() {
 					save("race_id", $(this).attr("id"));
-					$.mobile.changePage("#page_race");
+					$.mobile.changePage("#page_race"); // Toont race info pagina
 				});			
 			}
 			else {

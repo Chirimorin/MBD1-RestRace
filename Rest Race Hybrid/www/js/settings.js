@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on("pagebeforeshow", "#page_settings", function() {
 	
 	$("#toon_aantalIngecheckteWaypoints").val(load("toon_aantalIngecheckteWaypoints")).slider("refresh");
 	

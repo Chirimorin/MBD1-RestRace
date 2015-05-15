@@ -1,30 +1,10 @@
 <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
 
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 		
@@ -42,14 +22,8 @@
     </head>
     <body>
 	
+		<!-- INLOGGEN PAGINA -->
 		<div data-role="page" id="page_inloggen" class="ui-page">
-
-			
-		</div>
-		
-		<script src="js/index.js"></script>
-	
-		<!--<div data-role="page" id="page_inloggen" class="ui-page">
 
 			<div data-role="header" data-id="header" class="header">
 				<h1>Inloggen</h1>
@@ -62,14 +36,15 @@
 				<label for="wachtwoord">Wachtwoord:</label>
 				<input type="password" id="wachtwoord" name="wachtwoord" placeholder="Wachtwoord" />
 					
-				<button id="btn_inloggen">Inloggen</button><br /><br />
+				<button id="inloggen">Inloggen</button><br /><br />
 			
 				<button id="btn_registreren">Registreren</button>
 			</div>
 
-			<script src="js/index.js"></script>
+			<script src="js/inloggen.js"></script>
 		</div>
 		
+		<!-- REGISTREREN PAGINA -->
 		<div data-role="page" id="page_registreren">
 
 			<div data-role="header" data-id="header" class="header">
@@ -88,7 +63,140 @@
 			</div>
 
 			<script src="js/registreren.js"></script>
-		</div>-->
+		</div>
+		
+		<!-- RACES OVERZICHT PAGINA -->
+		<div data-role="page" id="page_races" class="ui-page">
+		
+			<div data-role="header" data-id="header" class="header">
+				<a href="#menu" data-icon="bars" data-iconpos="notext" id="btn_menu" class="icon"></a>
+				<h1>Races</h1>
+				<a href="#" data-icon="plus" data-iconpos="notext" id="race_toevoegen" class="ui-btn-right icon"></a>
+			</div>
+
+			<div data-role="main" class="ui-content">
+				<ul data-role="listview" data-inset="true" id="races"></ul>
+			</div>
+			
+			<script src="js/menu.js"></script>
+			<script src="js/races.js"></script>
+		</div>
+		
+		<!-- RACE TOEVOEGEN PAGINA -->
+		<div data-role="page" id="page_race_toevoegen">
+
+			<div data-role="header" data-id="header" class="header">
+				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" class="icon"></a>
+				<h1>Race toevoegen</h1>
+			</div>
+
+			<div data-role="main" class="ui-content">
+				<label for="code">Code:</label>
+				<input type="text" id="code" name="code" placeholder="Code" /><br />
+				
+				<button id="btn_toevoegen">Toevoegen</button>
+			</div>
+			
+			<script src="js/raceToevoegen.js"></script>
+		</div>
+		
+		<!-- RACE INFO PAGINA -->
+		<div data-role="page" id="page_race">
+
+			<div data-role="header" data-id="header" class="header">
+				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" class="icon"></a>
+				<h1>Race</h1>
+			</div>
+
+			<div data-role="main" class="ui-content">
+				<h3 id="naam"></h3>
+				
+				<div id="startTijdDiv">
+					<span>Start</span><br />
+					<span id="startTijd"></span>
+				</div>
+				
+				<div id="eindTijdDiv">
+					<span>Eind</span><br />
+					<span id="eindTijd"></span>
+				</div>
+				
+				<br /><br />
+				
+				<div>
+					<h3>Waypoints:</h3>
+					<ul data-role="listview" data-inset="true" id="waypoints"></ul>
+				</div>
+				
+				<button id="btn_inchecken">Inchecken waypoint</button>
+				
+				<br />
+				<center><a id="link_racePagina">Bekijk race op website</a></center>
+			</div>
+
+			<script src="js/race.js"></script>
+		</div>
+		
+		<!-- WAYPOINT INFO PAGINA -->
+		<div data-role="page" id="page_waypoint">
+
+			<div data-role="header" data-id="header" class="header">
+				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" class="icon"></a>
+				<h1>Waypoint</h1>
+			</div>
+
+			<div data-role="main" class="ui-content">
+				<h3 id="naam_waypoint"></h3>
+				<div id="omschrijving"></div>
+				<div id="kaartje">
+					<a id="link_toonOpKaart">Bekijk op kaart</a>
+				</div>
+			</div>
+
+			<script src="js/waypoint.js"></script>
+		</div>
+		
+		<!-- PROFIEL PAGINA -->
+		<div data-role="page" id="page_profiel">
+		
+			<div data-role="header" data-id="header" class="header">
+				<a href="#menu" data-icon="bars" id="btn_menu" data-iconpos="notext" class="icon"></a>
+				<h1>Profiel</h1>
+			</div>
+
+			<div data-role="main" class="ui-content">
+				<b>Huidige nickname: </b><i id="huidigeNickname"></i>
+			
+				<br /><br />
+				
+				<label for="nickname">Nickname:</label>
+				<input type="text" id="nickname" name="nickname" />
+				
+				<button id="btn_opslaan">Opslaan</button>
+			</div>
+
+			<script src="js/profiel.js"></script>
+		</div>
+		
+		<!-- SETTINGS PAGINA -->
+		<div data-role="page" id="page_settings">
+
+			<div data-role="header" data-id="header" class="header">
+				<a href="#menu" data-icon="bars" id="btn_menu" data-iconpos="notext" class="icon"></a>
+				<h1>Settings</h1>
+			</div>
+
+			<div data-role="main" class="ui-content">
+				<h3>Races overzicht:</h3>
+				<label for="toon_aantalIngecheckteWaypoints">Toon aantal ingecheckte waypoints:</label>
+				<select name="toon_aantalIngecheckteWaypoints" id="toon_aantalIngecheckteWaypoints" data-role="slider">
+					<option value="Uit">Uit</option>
+					<option value="Aan">Aan</option>
+				</select> 
+			</div>
+
+			<script src="js/settings.js"></script>
+		</div>
 		
     </body>
 </html>

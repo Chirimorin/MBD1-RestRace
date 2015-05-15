@@ -1,7 +1,7 @@
 $(document).ready(function() {
+    
+	$("#inloggen").on("tap", function() {
 	
-	$("#registreren").on("tap", function() {
-		
 		// Toont loading spinner
 		$.mobile.loading("show", {
 			text: msgText,
@@ -10,11 +10,11 @@ $(document).ready(function() {
 			textonly: textonly,
 			html: html
 		});
-		
+
 		if ($("#emailadres").val() != "" || $("#wachtwoord").val() != "") {
 			$.ajax({
 				type: "POST",
-				url: restrace + "signup",
+				url: restrace + "login",
 				headers: {
 					Accept: "application/json"
 				},
@@ -28,10 +28,12 @@ $(document).ready(function() {
 					
 					if (data.authKey) {
 						save("authKey", data.authKey);
-						window.location = "races.html";
+						data.nickname != null ? save("nickname", data.nickname) : save("nickname", "");
+						save("visitedWaypoints", data.visitedLocations);
+						$.mobile.changePage("#page_races");
 					}
 					else {
-						alert("Registreren mislukt.");
+						alert("E-mailadres en wachtwoord combinatie onjuist.");
 						$("#wachtwoord").val("");
 					}
 				}
@@ -40,9 +42,9 @@ $(document).ready(function() {
 
 	});
 
-	// Swipe naar vorige pagina
-	$("#page_registreren").off("swiperight").on("swiperight", function(event){
-		history.back();
+	// Toont registreren pagina
+	$("#btn_registreren").on("tap", function() {
+		$.mobile.changePage("#page_registreren");
 	});
-
+	
 });

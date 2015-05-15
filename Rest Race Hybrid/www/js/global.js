@@ -24,15 +24,4 @@ var $this = $(this),
 	textVisible = $this.jqmData("textvisible") || $.mobile.loader.prototype.options.textVisible,
 	textonly = !!$this.jqmData("textonly");
 	html = $this.jqmData("html") || "";
-
-// Geeft de waarde van een parameter in een URL terug
-function getUrlParameter(parameter){
-    var URLParametersString = window.location.search.substring(1);
-    var URLParametersArray = URLParametersString.split('&');
-    for (var i = 0; i < URLParametersArray.length; i++) {
-        var gesplitsteParameter = URLParametersArray[i].split('=');
-        if (gesplitsteParameter[0] == parameter) {
-            return gesplitsteParameter[1];
-        }
-    }
-} 
+	
