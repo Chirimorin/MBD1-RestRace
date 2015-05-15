@@ -77,15 +77,14 @@ function onDeviceReady(){
 					$.mobile.loading("hide"); // Verbergt loading spinner
 					
 					if (data.checkedIn) {
-						playAudio(getPhoneGapPath() + "/sounds/success.mp3");
+						playAudio(getPhoneGapPath() + "sounds/success.mp3");
 						alert("U bent ingecheckt.");
 						save("visitedWaypoints", data.locations);
 						displayWaypoints();
 					}
 					else {
-						//playAudio(getPhoneGapPath() + "/sounds/failure.mp3");
+						playAudio(getPhoneGapPath() + "sounds/failure.mp3");
 						alert("U bent niet ingecheckt.");
-						alert(getPhoneGapPath() + "/sounds/failure.mp3");
 					}
 				}
 			});
