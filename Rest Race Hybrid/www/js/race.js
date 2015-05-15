@@ -54,6 +54,7 @@ $(document).on("pagebeforeshow", "#page_race", function(){
 					if (data.checkedIn) {
 						playAudio(getPhoneGapPath() + "/sounds/success.mp3");
 						alert("U bent ingecheckt.");
+						location.reload();
 					}
 					else {
 						playAudio(getPhoneGapPath() + "/sounds/failure.mp3");

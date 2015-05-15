@@ -1,7 +1,7 @@
-$(document).on("pagebeforecreate", function(){
+$(document).on("pageinit", function(){
 	
-	if (load("authKey") !== null && load("authKey") != "") {
+	/*if (load("authKey") !== null && load("authKey") != "") {
 		$.mobile.changePage("#page_races", {transition: "none"});
-	}
+	}*/
 
 });
