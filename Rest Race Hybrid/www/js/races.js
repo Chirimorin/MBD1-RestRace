@@ -38,7 +38,6 @@ function displayRaces() {
 			Accept: "application/json"
 		},
 		success: function(allRaces) {
-			$.mobile.loading("hide"); // Verbergt loading spinner
 			
 			sessionStorage.setItem("allRaces", JSON.stringify(allRaces)); // Slaat opgehaalde races op
 			
@@ -66,6 +65,9 @@ function displayRaces() {
 					aantalVisitedWaypoints == allRaces[i].locations.length ? races += "<span class='status'>Voltooid</span></a></li>" : races += "</a></li>"
 					
 				}
+				
+				$.mobile.loading("hide"); // Verbergt loading spinner
+				
 				$("#races").append(races).listview().listview("refresh");
 				
 				$(".race").on("tap", function() {
