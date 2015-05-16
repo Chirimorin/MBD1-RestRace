@@ -4,7 +4,7 @@ $(document).on("pagebeforeshow", "#page_races", function(){
 		save("toon_aantalIngecheckteWaypoints", "Aan");
 	}
 	
-	getRaces();
+	displayRaces();
 	
 	// Toont race toevoegen pagina
 	$("#race_toevoegen").on("tap", function() {
@@ -17,10 +17,8 @@ $(document).on("pagebeforeshow", "#page_races", function(){
 	});
 
 });
-
-$(document).ready(function() {
 	
-	function getRaces() {
+	function displayRaces() {
 		
 		if (checkConnection()) {
 			
@@ -42,59 +40,60 @@ $(document).ready(function() {
 				success: function(allRaces) {
 					$.mobile.loading("hide"); // Verbergt loading spinner
 					sessionStorage.setItem("allRaces", JSON.stringify(allRaces)); // Slaat opgehaalde races op
-					displayRaces(allRaces);	
+					
+					$("#races").empty();
+		
+					if (allRaces.length > 0) {
+						$("#meldingGeenRaces").hide();
+						$("#races").show();
+						
+						var races = "";
+						for(var i = 0; i < allRaces.length; i++) {
+							
+							// Bepaalt het aantal visited waypoint per race
+							aantalVisitedWaypoints = 0;
+							for(var j = 0; j < allRaces[i].locations.length; j++) {
+								for(var k = 0; k < load("visitedWaypoints").length; k++) {
+									if(load("visitedWaypoints")[k].location == allRaces[i].locations[j].location._id) {
+										aantalVisitedWaypoints++;
+									}
+								}
+							}
+							
+							races += 	"<li data-icon='carat-r'><a href='#' id=" + allRaces[i]._id + " class='race listItem'>" + allRaces[i].name;
+							
+							// Toont het afhankelijk van de setting het aantal visited waypoints wel of niet
+							if (load("toon_aantalIngecheckteWaypoints") == "Aan") {
+								races += "<br/ ><span class='tekst'>" + aantalVisitedWaypoints + "/" + allRaces[i].locations.length + " waypoints</span>";
+							}
+							
+							aantalVisitedWaypoints == allRaces[i].locations.length ? races += "<span class='status'>Voltooid</span></a></li>" : races += "</a></li>"
+							
+						}
+						$("#races").append(races).listview().listview("refresh");
+						
+						$(".race").on("tap", function() {
+							save("race_id", $(this).attr("id"));
+							$.mobile.changePage("#page_race"); // Toont race info pagina
+						});			
+					}
+					else {
+						$("#races").hide();
+						$("#meldingGeenRaces").show();
+					}
 				}
 			});
 		}
 		else {
 			alert("Geen verbinding met het internet.");
-			displayRaces(JSON.parse(sessionStorage.getItem("allRaces"));	
-		}
-
-	}
-
-	function displayRaces(allRaces) {
-		$("#races").empty();
-		
-		if (allRaces.length > 0) {
-			$("#meldingGeenRaces").hide();
-			$("#races").show();
-			
-			var races = "";
-			for(var i = 0; i < allRaces.length; i++) {
-				
-				// Bepaalt het aantal visited waypoint per race
-				aantalVisitedWaypoints = 0;
-				for(var j = 0; j < allRaces[i].locations.length; j++) {
-					for(var k = 0; k < load("visitedWaypoints").length; k++) {
-						if(load("visitedWaypoints")[k].location == allRaces[i].locations[j].location._id) {
-							aantalVisitedWaypoints++;
-						}
-					}
-				}
-				
-				races += 	"<li data-icon='carat-r'><a href='#' id=" + allRaces[i]._id + " class='race listItem'>" + allRaces[i].name;
-				
-				// Toont het afhankelijk van de setting het aantal visited waypoints wel of niet
-				if (load("toon_aantalIngecheckteWaypoints") == "Aan") {
-					races += "<br/ ><span class='tekst'>" + aantalVisitedWaypoints + "/" + allRaces[i].locations.length + " waypoints</span>";
-				}
-				
-				aantalVisitedWaypoints == allRaces[i].locations.length ? races += "<span class='status'>Voltooid</span></a></li>" : races += "</a></li>"
-				
+			if (sessionStorage.getItem("allRaces") !== null && sessionStorage.getItem("allRaces") != null && JSON.parse(sessionStorage.getItem("allRaces").length == 0) {
+				$("#races").hide();
+				$("#meldingGeenRaces").show();
 			}
-			$("#races").append(races).listview().listview("refresh");
-			
-			$(".race").on("tap", function() {
-				save("race_id", $(this).attr("id"));
-				$.mobile.changePage("#page_race"); // Toont race info pagina
-			});			
 		}
-		else {
-			$("#races").hide();
-			$("#meldingGeenRaces").show();
-		}	
+
 	}
+
 });
 
 
