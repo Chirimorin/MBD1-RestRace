@@ -6,8 +6,7 @@ $(document).ready(function() {
     
 	$("#inloggen").on("tap", function() {
 		
-		//alert("Verbinding: " + navigator.network.connection.type == Connection.NONE);
-		alert("Verbinding");
+		alert("Verbinding: " + navigator.network.connection.type == Connection.NONE);
 		
 		if (true) {
 	
