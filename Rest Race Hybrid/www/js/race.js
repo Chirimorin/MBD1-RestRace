@@ -56,38 +56,45 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
 	$("#btn_inchecken").on("tap", function(){
 		
-		// Toont loading spinner
-		$.mobile.loading("show", {
-			text: msgText,
-			textVisible: textVisible,
-			theme: theme,
-			textonly: textonly,
-			html: html
-		});
-		
-		var onSuccess = function(position) {			  
-			$.ajax({
-				type: "PUT",
-				url: restrace + "races/" + race._id + "/location/" + position.coords.latitude + "/" + position.coords.longitude + "?apikey=" + load("authKey"),
-				headers: {
-					Accept: "application/json"
-				},
-				dataType: "json",
-				success: function(data) {
-					$.mobile.loading("hide"); // Verbergt loading spinner
+		var onSuccess = function(position) {
+
+			if (checkConnection()) {
 					
-					if (data.checkedIn) {
-						playAudio(getPhoneGapPath() + "sounds/success.mp3");
-						alert("U bent ingecheckt.");
-						save("visitedWaypoints", data.locations);
-						displayWaypoints();
+				// Toont loading spinner
+				$.mobile.loading("show", {
+					text: msgText,
+					textVisible: textVisible,
+					theme: theme,
+					textonly: textonly,
+					html: html
+				});
+				
+				$.ajax({
+					type: "PUT",
+					url: restrace + "races/" + race._id + "/location/" + position.coords.latitude + "/" + position.coords.longitude + "?apikey=" + load("authKey"),
+					headers: {
+						Accept: "application/json"
+					},
+					dataType: "json",
+					success: function(data) {
+						$.mobile.loading("hide"); // Verbergt loading spinner
+						
+						if (data.checkedIn) {
+							playAudio(getPhoneGapPath() + "sounds/success.mp3");
+							alert("U bent ingecheckt.");
+							save("visitedWaypoints", data.locations);
+							displayWaypoints();
+						}
+						else {
+							playAudio(getPhoneGapPath() + "sounds/failure.mp3");
+							alert("U bent niet ingecheckt.");
+						}
 					}
-					else {
-						playAudio(getPhoneGapPath() + "sounds/failure.mp3");
-						alert("U bent niet ingecheckt.");
-					}
-				}
-			});
+				});
+			}
+			else {
+				alert("Geen verbinding met het internet.");
+			}
 		};
 		
 		function onError(error) {

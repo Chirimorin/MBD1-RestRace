@@ -6,9 +6,7 @@ $(document).ready(function() {
     
 	$("#inloggen").on("tap", function() {
 		
-		alert("Verbinding: " + checkConnection());
-		
-		if (true) {
+		if (checkConnection()) {
 	
 			// Toont loading spinner
 			$.mobile.loading("show", {

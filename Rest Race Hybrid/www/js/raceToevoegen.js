@@ -8,35 +8,41 @@ $(document).ready(function() {
 
 	$("#btn_toevoegen").on("tap", function() {
 		
-		// Toont loading spinner
-		$.mobile.loading("show", {
-			text: msgText,
-			textVisible: textVisible,
-			theme: theme,
-			textonly: textonly,
-			html: html
-		});
+		if (checkConnection()) {
 		
-		if ($("#code").val() != "") {
-			$.ajax({
-				type: "PUT",
-				url: restrace + "races/" + $("#code").val() + "/participant?apikey=" + load("authKey"),
-				headers: {
-					Accept: "application/json"
-				},
-				dataType: "json",
-				success: function(data) {
-					$.mobile.loading("hide"); // Verbergt loading spinner
-					
-					$("#code").val("");
-					history.back(); // Gaat terug naar races overzicht pagina
-				},
-				error: function() {
-					$.mobile.loading("hide"); // Verbergt loading spinner
-					
-					alert("Code is ongeldig.");
-				}
+			// Toont loading spinner
+			$.mobile.loading("show", {
+				text: msgText,
+				textVisible: textVisible,
+				theme: theme,
+				textonly: textonly,
+				html: html
 			});
+			
+			if ($("#code").val() != "") {
+				$.ajax({
+					type: "PUT",
+					url: restrace + "races/" + $("#code").val() + "/participant?apikey=" + load("authKey"),
+					headers: {
+						Accept: "application/json"
+					},
+					dataType: "json",
+					success: function(data) {
+						$.mobile.loading("hide"); // Verbergt loading spinner
+						
+						$("#code").val("");
+						history.back(); // Gaat terug naar races overzicht pagina
+					},
+					error: function() {
+						$.mobile.loading("hide"); // Verbergt loading spinner
+						
+						alert("Code is ongeldig.");
+					}
+				});
+			}
+		}
+		else {
+			alert("Geen verbinding met het internet.");
 		}
 
 	});

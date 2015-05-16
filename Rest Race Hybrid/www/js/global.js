@@ -1,5 +1,6 @@
 restrace = "https://restrace2.herokuapp.com/";
 
+// Checkt of er verbinding is met het internet
 function checkConnection() {
 	if(!navigator.network) {
 		navigator.network = window.top.navigator.network;
