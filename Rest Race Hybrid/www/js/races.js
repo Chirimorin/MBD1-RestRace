@@ -1,7 +1,8 @@
 $(document).on("pagebeforeshow", "#page_races", function(){
 	
 	if (load("toon_aantalIngecheckteWaypoints") === null && load("toon_aantalIngecheckteWaypoints") == "") {
-		save("toon_aantalIngecheckteWaypoints", "Aan");
+		//save("toon_aantalIngecheckteWaypoints", "Aan");
+		$("#toon_aantalIngecheckteWaypoints").val("Aan").slider("refresh");
 	}
 	
 	displayRaces();

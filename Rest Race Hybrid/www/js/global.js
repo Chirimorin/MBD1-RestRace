@@ -1,5 +1,6 @@
 restrace = "https://restrace2.herokuapp.com/";
 
+// Functionaliteit van de backbutton
 document.addEventListener("backbutton", function(e){
     if($.mobile.activePage.is('#page_inloggen') || $.mobile.activePage.is('#page_races')){
         navigator.app.exitApp();
