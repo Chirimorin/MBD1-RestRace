@@ -21,6 +21,7 @@
   
   <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
   <gap:plugin name="org.apache.cordova.media" version="0.2.13" />
+  <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
   <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
   
   <icon src="icon.png"/>

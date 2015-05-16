@@ -14,9 +14,10 @@ document.addEventListener("backbutton", function(e){
 function checkInternetConnecttion() {
 	var connectionStatus = false;
 	setInterval(function () {
-        connectionStatus = navigator.onLine ? 'online' : 'offline';
+        connectionStatus = navigator.onLine;
     }, 100);
-    alert(window.navigator.onLine);
+    alert(connectionStatus);
+	return connectionStatus;
 }
 
 // Slaat een object op in localstorage.

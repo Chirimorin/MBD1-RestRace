@@ -6,7 +6,7 @@ $(document).ready(function() {
     
 	$("#inloggen").on("tap", function() {
 		
-		checkInternetConnecttion();
+		alert("Verbinding: " + navigator.network.connection.type == Connection.NONE);
 		
 		if (true) {
 	
