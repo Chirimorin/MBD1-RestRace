@@ -1,5 +1,13 @@
 restrace = "https://restrace2.herokuapp.com/";
 
+function checkConnection() {
+	if(!navigator.network) {
+		navigator.network = window.top.navigator.network;
+	}
+
+	return ( (navigator.network.connection.type === "none" || navigator.network.connection.type === null || navigator.network.connection.type === "unknown" ) ? false : true );
+}
+
 // Functionaliteit van de backbutton
 document.addEventListener("backbutton", function(e){
     if($.mobile.activePage.is('#page_inloggen') || $.mobile.activePage.is('#page_races')){
