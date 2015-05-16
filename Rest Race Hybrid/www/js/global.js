@@ -16,7 +16,7 @@ function checkInternetConnecttion() {
 	setInterval(function () {
         connectionStatus = navigator.onLine ? 'online' : 'offline';
     }, 100);
-    alert(navigator.onLine);
+    alert(window.navigator.onLine);
 }
 
 // Slaat een object op in localstorage.
