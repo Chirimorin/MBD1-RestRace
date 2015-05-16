@@ -10,16 +10,6 @@ document.addEventListener("backbutton", function(e){
     }
 }, false);
 
-// Checkt of er internet verbinding is
-function checkInternetConnecttion() {
-	var connectionStatus = false;
-	setInterval(function () {
-        connectionStatus = navigator.onLine;
-    }, 100);
-    alert(connectionStatus);
-	return connectionStatus;
-}
-
 // Slaat een object op in localstorage.
 function save(name,value) {
     localStorage.setItem(name, JSON.stringify(value));
