@@ -44,7 +44,7 @@ $(document).on("pagebeforeshow", "#page_races", function(){
 					$("#races").empty();
 		
 					if (allRaces.length > 0) {
-						$("#meldingGeenRaces").hide();
+						$("#meldingGeenRaces").empty();
 						$("#races").show();
 						
 						var races = "";
@@ -79,7 +79,7 @@ $(document).on("pagebeforeshow", "#page_races", function(){
 					}
 					else {
 						$("#races").hide();
-						$("#meldingGeenRaces").show();
+						$("#meldingGeenRaces").append("<span>Er zijn nog geen races waar u aan deelneemt.</span>");
 					}
 				}
 			});
@@ -88,7 +88,7 @@ $(document).on("pagebeforeshow", "#page_races", function(){
 			alert("Geen verbinding met het internet.");
 			if (sessionStorage.getItem("allRaces") !== null && sessionStorage.getItem("allRaces") != null && JSON.parse(sessionStorage.getItem("allRaces").length == 0) {
 				$("#races").hide();
-				$("#meldingGeenRaces").show();
+				$("#meldingGeenRaces").append("<span>Er zijn nog geen races waar u aan deelneemt.</span>");
 			}
 		}
 
