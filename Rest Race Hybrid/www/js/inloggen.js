@@ -4,6 +4,8 @@ $(document).ready(function() {
 		$.mobile.changePage("#page_races", {transition: "none"});
 	}
     
+	$("#emailadres").focus();
+	
 	$("#inloggen").on("tap", function() {
 		
 		if (checkConnection()) {

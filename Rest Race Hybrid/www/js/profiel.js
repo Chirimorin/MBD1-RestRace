@@ -3,6 +3,8 @@ $(document).on("pagebeforeshow", "#page_profiel", function( event ) {
 	load("nickname") != "" ? $("#huidigeNickname").text(load("nickname")) : $("#huidigeNickname").text("(Geen nickname)");
 	$("#nickname").val(load("nickname"));
 	
+	$("#nickname").focus();
+	
 	$("#btn_opslaan").on("tap", function() {
 		
 		if (checkConnection()) {

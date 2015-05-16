@@ -5,6 +5,8 @@ $(document).ready(function() {
 	$(window).unload(function() {
 		save("code", $("#code").val());
 	});
+	
+	$("#code").focus();
 
 	$("#btn_toevoegen").on("tap", function() {
 		

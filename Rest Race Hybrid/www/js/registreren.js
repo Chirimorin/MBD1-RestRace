@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	
+	$("#emailadres").focus();
+	
 	$("#registreren").on("tap", function() {
 	
 		if (checkConnection()) {
