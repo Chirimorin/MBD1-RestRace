@@ -1,5 +1,14 @@
 restrace = "https://restrace2.herokuapp.com/";
 
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#page_inloggen') || $.mobile.activePage.is('#page_races')){
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory();
+    }
+}, false);
+
 // Slaat een object op in localstorage.
 function save(name,value) {
     localStorage.setItem(name, JSON.stringify(value));

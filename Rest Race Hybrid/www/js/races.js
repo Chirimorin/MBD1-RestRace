@@ -1,12 +1,3 @@
-document.addEventListener("backbutton", function(e){
-    if($.mobile.activePage.is('#page_inloggen') || $.mobile.activePage.is('#page_races')){
-        navigator.app.exitApp();
-    }
-    else {
-        navigator.app.backHistory();
-    }
-}, false);
-
 $(document).on("pagebeforeshow", "#page_races", function(){
 	
 	if (load("toon_aantalIngecheckteWaypoints") === null && load("toon_aantalIngecheckteWaypoints") == "") {
