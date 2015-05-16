@@ -87,7 +87,9 @@ function displayRaces(allRaces) {
 		
 		$(".race").on("tap", function() {
 			save("race_id", $(this).attr("id"));
-			
+
+            displayRaceDetails();
+
 			var transition = $(document).width() < 450 ? 'slide' : 'none';
 			$.mobile.changePage("#page_race", {transition: transition}); // Toont race info pagina
 		});			

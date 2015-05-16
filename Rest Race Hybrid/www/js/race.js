@@ -1,33 +1,37 @@
 var race = "";
 
-$(document).on("pagebeforeshow", "#page_race", function(){
 
-	// Haalt de goede race uit de opgeslagen races
-	var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));
-	race = $.grep(allRaces, function(e){ return e._id == load("race_id"); })[0];
-	
-	$("#naam_race").text(race.name);
-	
-	// Geeft de startdatum goed weer
-	var start = new Date(race.startTime);
-	$("#startTijd").text(	('0' + start.getDate()).slice(-2) + "-" + ('0' + (start.getMonth() + 1)).slice(-2) + "-" + start.getFullYear() + " " + 
-							('0' + start.getHours()).slice(-2) + ":" + ('0' + start.getMinutes()).slice(-2));
-	
-	// Geeft de einddatum goed weer
-	if (race.endTime != null) {
-		var eind = new Date(race.endTime);
-		$("#eindTijd").text(('0' + eind.getDate()).slice(-2) + "-" + ('0' + (eind.getMonth() + 1)).slice(-2) + "-" + eind.getFullYear() + " " + 
-							('0' + eind.getHours()).slice(-2) + ":" + ('0' + eind.getMinutes()).slice(-2));
-	}
-	
-	// Toont race info pagina van de website
-	$("#link_racePagina").on("tap", function() {
-		window.location = restrace + "races/" + race._id + "?apikey=" + load("authKey");
-	});
-	
-	displayWaypoints();	
-	
-});		
+
+displayRaceDetails = function(){
+
+    // Haalt de goede race uit de opgeslagen races
+    var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));
+    race = $.grep(allRaces, function(e){ return e._id == load("race_id"); })[0];
+
+    $("#naam_race").text(race.name);
+
+    // Geeft de startdatum goed weer
+    var start = new Date(race.startTime);
+    $("#startTijd").text(	('0' + start.getDate()).slice(-2) + "-" + ('0' + (start.getMonth() + 1)).slice(-2) + "-" + start.getFullYear() + " " +
+    ('0' + start.getHours()).slice(-2) + ":" + ('0' + start.getMinutes()).slice(-2));
+
+    // Geeft de einddatum goed weer
+    if (race.endTime != null) {
+        var eind = new Date(race.endTime);
+        $("#eindTijd").text(('0' + eind.getDate()).slice(-2) + "-" + ('0' + (eind.getMonth() + 1)).slice(-2) + "-" + eind.getFullYear() + " " +
+        ('0' + eind.getHours()).slice(-2) + ":" + ('0' + eind.getMinutes()).slice(-2));
+    }
+
+    // Toont race info pagina van de website
+    $("#link_racePagina").on("tap", function() {
+        window.location = restrace + "races/" + race._id + "?apikey=" + load("authKey");
+    });
+
+    displayWaypoints();
+
+}
+
+//$(document).on("pagebeforeshow", "#page_race", displayRaceDetails);
 
 function displayWaypoints() {
 	$("#waypoints").empty();
