@@ -1,7 +1,5 @@
 restrace = "https://restrace2.herokuapp.com/";
 
-var connectionStatus = false;
-
 // Functionaliteit van de backbutton
 document.addEventListener("backbutton", function(e){
     if($.mobile.activePage.is('#page_inloggen') || $.mobile.activePage.is('#page_races')){
@@ -14,10 +12,11 @@ document.addEventListener("backbutton", function(e){
 
 // Checkt of er internet verbinding is
 function checkInternetConnecttion() {
+	var connectionStatus = false;
 	setInterval(function () {
         connectionStatus = navigator.onLine ? 'online' : 'offline';
     }, 100);
-    alert(connectionStatus);
+    alert(navigator.onLine);
 }
 
 // Slaat een object op in localstorage.

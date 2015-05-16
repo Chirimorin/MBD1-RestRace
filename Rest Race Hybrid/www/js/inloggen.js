@@ -6,7 +6,7 @@ $(document).ready(function() {
     
 	$("#inloggen").on("tap", function() {
 		
-		checkInternetConnecttion()
+		checkInternetConnecttion();
 		
 		if (true) {
 	
