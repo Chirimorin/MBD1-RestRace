@@ -42,7 +42,6 @@ function getRaces() {
 				sessionStorage.setItem("allRaces", JSON.stringify(allRaces)); // Slaat opgehaalde races op
 				displayRaces(allRaces);	
 			}
-		
 		});
 	}
 	else {
@@ -57,6 +56,7 @@ function displayRaces(allRaces) {
 	
 	if (allRaces.length > 0) {
 		$("#meldingGeenRaces").hide();
+		$("#races").show();
 		
 		var races = "";
 		for(var i = 0; i < allRaces.length; i++) {
