@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on("pagebeforeshow", "#page_inloggen", function() {
 	
 	if (load("authKey") !== null && load("authKey") != "") {
 		$.mobile.changePage("#page_races", {transition: "none"});

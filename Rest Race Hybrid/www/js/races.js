@@ -1,4 +1,4 @@
-$(document).on("pagebeforeshow", "#page_races", function(){
+$(document).on("pageshow", "#page_races", function() {
 	
 	if (load("toon_aantalIngecheckteWaypoints") === null || load("toon_aantalIngecheckteWaypoints") == "") {
 		save("toon_aantalIngecheckteWaypoints", "Aan");
