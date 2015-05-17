@@ -18,7 +18,7 @@ $(document).on("pagebeforeshow", "#page_waypoint", function(){
 	}
 	
 	// Opent native maps app
-	$("#link_toonOpKaart").on("tap", function() {
+	$("#link_toonOpKaart").off("tap").on("tap", function() {
 		if (device == "Android") {
 			window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long; + "?&q=" + waypoint.location.lat + "," + waypoint.location.long;// Android
 		}

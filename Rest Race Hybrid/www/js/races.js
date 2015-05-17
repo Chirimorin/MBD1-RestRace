@@ -2,7 +2,7 @@ var pageSetup = false;
 
 $(document).ready(function() {
     // Toont race toevoegen pagina
-    $("#race_toevoegen").on("tap", function() {
+    $("#race_toevoegen").off("tap").on("tap", function() {
         console.log("blah!");
         $.mobile.changePage("#page_race_toevoegen");
     });

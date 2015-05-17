@@ -5,7 +5,7 @@ $(document).on("pagebeforeshow", "#page_profiel", function( event ) {
 	
 	$("#nickname").focus();
 	
-	$("#btn_opslaan").on("tap", function() {
+	$("#btn_opslaan").off("tap").on("tap", function() {
 		
 		if (checkConnection()) {
 	
