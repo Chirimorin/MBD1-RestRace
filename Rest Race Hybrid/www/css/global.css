@@ -3,7 +3,7 @@
 }
 
 @media all and (min-width: 50em){
-	#page_races {
+	#page_races.ui-page-active {
 		display: block;
 		float: left;
 		width: 326px;
