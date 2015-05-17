@@ -7,6 +7,8 @@ $(document).one('pagebeforeshow', function () {
 	$("#menu").panel().enhanceWithin();
 	
 	$("#menu_item_races").on("tap", function() {
+        $("#races_list").addClass("active");
+        $("#races_detail").removeClass("active");
 		$.mobile.changePage("#page_races"); // Toont race overzicht pagina
 	});
 
