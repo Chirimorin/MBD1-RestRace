@@ -20,13 +20,13 @@ $(document).on("pagebeforeshow", "#page_waypoint", function(){
 	// Opent native maps app
 	$("#link_toonOpKaart").on("tap", function() {
 		if (device == "Android") {
-			window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long; + "?z=5&q=" + waypoint.location.lat + "," + waypoint.location.long  + "(" + waypoint.location.name + ")";// Android
+			window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long; + "?&q=" + waypoint.location.lat + "," + waypoint.location.long;// Android
 		}
 		else if (device == "iOS") {
-			window.location = "maps://maps.google.com/maps?daddr=" + waypoint.location.lat + "," + waypoint.location.long; // iOS
+			window.location = "maps://maps.google.com/maps?q=" + waypoint.location.lat + "," + waypoint.location.long; // iOS
 		} 
 		else {
-			window.location = "http://maps.google.com/maps?daddr=" + waypoint.location.lat + "," + waypoint.location.long; // Default
+			window.location = "http://maps.google.com/maps?q=" + waypoint.location.lat + "," + waypoint.location.long; // Default
 		}
 	});
 	
