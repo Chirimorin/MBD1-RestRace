@@ -25,11 +25,6 @@ $(document).on("pageshow", "#page_races", function() {
         }
 	});
 
-    // Swipe naar de vorige pagina
-    $("#page_race").off("swiperight").on("swiperight", function(event){
-        history.back();
-    });
-
 });
 	
 function getRaces() {
