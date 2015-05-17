@@ -17,8 +17,18 @@ $(document).on("pageshow", "#page_races", function() {
 	
 	// Swipe om menu te openen
 	$("#page_races").off("swiperight").on("swiperight", function(event){
-		$("#menu").panel("open");
+        if ($("#races_list").hasClass("active")) {
+            $("#menu").panel("open");
+        } else {
+            $("#races_list").addClass("active");
+            $("#races_detail").removeClass("active");
+        }
 	});
+
+    // Swipe naar de vorige pagina
+    $("#page_race").off("swiperight").on("swiperight", function(event){
+        history.back();
+    });
 
 });
 	

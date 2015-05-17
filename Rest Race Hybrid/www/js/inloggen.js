@@ -35,6 +35,9 @@ $(document).ready(function() {
 						$.mobile.loading("hide"); // Verbergt loading spinner
 						
 						if (data.authKey) {
+                            $("#races_list").addClass("active");
+                            $("#races_detail").removeClass("active");
+
 							$("#emailadres").val("");
 							$("#wachtwoord").val("");
 							
