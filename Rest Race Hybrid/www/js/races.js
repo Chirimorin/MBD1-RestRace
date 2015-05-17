@@ -1,7 +1,11 @@
-var raceDetailLoaded = false;
+var pageSetup = false;
 
 $(document).on("pageshow", "#page_races", function() {
-    $("#page_race").addClass("races-active");
+    //if (!pageSetup) {
+    //    $("#races_list").addClass("active");
+    //    $("#races_detail").removeClass("active");
+    //    pageSetup = true;
+    //}
 	
 	if (load("toon_aantalIngecheckteWaypoints") === null || load("toon_aantalIngecheckteWaypoints") == "") {
 		save("toon_aantalIngecheckteWaypoints", "Aan");
@@ -18,13 +22,6 @@ $(document).on("pageshow", "#page_races", function() {
 	$("#page_races").off("swiperight").on("swiperight", function(event){
 		$("#menu").panel("open");
 	});
-
-    // Wissel naar race detail pagina en terug. Dit is snel genoeg om niet te zien en zorgt voor de juiste styling. (nodig voor tablet layout)
-    if (!raceDetailLoaded) {
-        raceDetailLoaded = true;
-        $.mobile.changePage("#page_race", {transition: 'none'}); // Toont race info pagina
-        $.mobile.changePage("#page_races", {transition: 'none'}); // Toont race list pagina
-    }
 
 });
 
@@ -101,17 +98,20 @@ function displayRaces(allRaces) {
 		
 		$(".race").on("tap", function() {
 			save("race_id", $(this).attr("id"));
-            
-            var tabletLayout = window.matchMedia("all and (min-width: 50em)").matches;
 
-			var transition = tabletLayout ? 'none' : 'slide';
+            displayRaceDetails();
 
-            $.mobile.changePage("#page_race", {transition: transition}); // Toont race info pagina
-
-            if (tabletLayout) {
-                // Ga meteen terug naar de races lijst in het geval van tablet layout. Beide staan op het scherm.
-                $.mobile.changePage("#page_races", {transition: 'none'}); // Toont race list pagina
-            }
+            //var tabletLayout = window.matchMedia("all and (min-width: 50em)").matches;
+//
+			//var transition = tabletLayout ? 'none' : 'slide';
+//
+            //
+            //$.mobile.changePage("#page_race", {transition: transition}); // Toont race info pagina
+//
+            //if (tabletLayout) {
+            //    // Ga meteen terug naar de races lijst in het geval van tablet layout. Beide staan op het scherm.
+            //    $.mobile.changePage("#page_races", {transition: 'none'}); // Toont race list pagina
+            //}
 		});			
 	}
 	else {

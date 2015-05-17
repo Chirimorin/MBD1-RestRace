@@ -65,23 +65,6 @@
 			<script src="js/registreren.js"></script>
 		</div>
 
-		<!-- RACES OVERZICHT PAGINA -->
-		<div data-role="page" id="page_races" class="ui-page">
-		
-			<div data-role="header" data-id="header" class="header">
-				<a href="#menu" data-icon="bars" data-iconpos="notext" id="btn_menu" class="icon"></a>
-				<h1>Races</h1>
-				<a href="#" data-icon="plus" data-iconpos="notext" id="race_toevoegen" class="ui-btn-right icon"></a>
-			</div>
-
-			<div data-role="main" class="ui-content">
-				<ul data-role="listview" data-inset="true" id="races"></ul>
-			</div>
-			
-			<script src="js/menu.js"></script>
-			<script src="js/races.js"></script>
-		</div>
-
 		<!-- RACE TOEVOEGEN PAGINA -->
 		<div data-role="page" id="page_race_toevoegen">
 
@@ -99,12 +82,30 @@
 
 			<script src="js/raceToevoegen.js"></script>
 		</div>
+
+        <!-- RACES PAGINA -->
+        <div data-role="page" id="page_races" class="ui-page">
+            <div id="races_list" class="active">
+            <div data-role="header" data-id="header" class="header">
+                <a href="#menu" data-icon="bars" data-iconpos="notext" id="btn_menu" class="icon"></a>
+                <h1>Races</h1>
+                <a href="#" data-icon="plus" data-iconpos="notext" id="race_toevoegen" class="ui-btn-right icon"></a>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <ul data-role="listview" data-inset="true" id="races"></ul>
+            </div>
+
+            <script src="js/menu.js"></script>
+            <script src="js/races.js"></script>
+        </div>
 		
 		<!-- RACE INFO PAGINA -->
-		<div data-role="page" id="page_race">
+		<!-- <div data-role="page" id="page_race"> -->
 
+            <div id="races_detail">
 			<div data-role="header" data-id="header" class="header">
-				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" class="icon backbutton"></a>
+				<a href="#" id="BackToRacesList" data-role="button" data-icon="back" data-iconpos="notext" class="icon backbutton"></a>
 				<h1>Race</h1>
 			</div>
 
@@ -135,6 +136,7 @@
 			</div>
 
 			<script src="js/race.js"></script>
+            </div>
 		</div>
 		
 		<!-- WAYPOINT INFO PAGINA -->

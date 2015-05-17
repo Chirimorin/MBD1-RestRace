@@ -1,6 +1,8 @@
 var race = "";
 
-$(document).on("pagebeforeshow", "#page_race", function(){
+displayRaceDetails = function(){
+    $("#races_detail").addClass("active");
+    $("#races_list").removeClass("active");
 
     // Haalt de goede race uit de opgeslagen races
     var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));
@@ -25,9 +27,14 @@ $(document).on("pagebeforeshow", "#page_race", function(){
         window.location = restrace + "races/" + race._id + "?apikey=" + load("authKey");
     });
 
+    $("#BackToRacesList").on("tap", function() {
+        $("#races_list").addClass("active");
+        $("#races_detail").removeClass("active");
+    });
+
     displayWaypoints();
 
-});
+};
 
 function displayWaypoints() {
 	$("#waypoints").empty();
