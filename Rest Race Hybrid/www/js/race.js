@@ -25,8 +25,18 @@ displayRaceDetails = function(){
 
     // Toont race info pagina van de website
     $("#link_racePagina").on("tap", function() {
+
+        if (device == "Android") {
+            navigator.app.loadUrl(restrace + "races/" + race._id + "?apikey=" + load("authKey"), {openExternal : true});
+        }
+        else if (device == "iOS") {
+            window.open(restrace + "races/" + race._id + "?apikey=" + load("authKey"), '_system'); // iOS
+        }
+        else {
+            window.open(restrace + "races/" + race._id + "?apikey=" + load("authKey"), '_system'); // Default
+        }
         // window.location = restrace + "races/" + race._id + "?apikey=" + load("authKey");
-       window.open(restrace + "races/" + race._id + "?apikey=" + load("authKey"), '_system');
+
     });
 
     $("#BackToRacesList").on("tap", function() {
