@@ -1,16 +1,19 @@
 var pageSetup = false;
 
+$(document).ready(function() {
+    // Toont race toevoegen pagina
+    $("#race_toevoegen").on("tap", function() {
+        console.log("blah!");
+        $.mobile.changePage("#page_race_toevoegen");
+    });
+});
+
 $(document).on("pageshow", "#page_races", function() {
 	if (load("toon_aantalIngecheckteWaypoints") === null || load("toon_aantalIngecheckteWaypoints") == "") {
 		save("toon_aantalIngecheckteWaypoints", "Aan");
 	}
 	
 	getRaces();
-	
-	// Toont race toevoegen pagina
-	$("#race_toevoegen").on("tap", function() {
-		$.mobile.changePage("#page_race_toevoegen");
-	});
 	
 	// Swipe om menu te openen
 	$("#page_races").off("swiperight").on("swiperight", function(event){
