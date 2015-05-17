@@ -68,6 +68,7 @@ function displayRaces(allRaces) {
 		}
 		
 		$("#races").show();
+        $("#noRaces").addClass("hidden");
 		
 		var races = "";
 		for(var i = 0; i < allRaces.length; i++) {
@@ -114,8 +115,9 @@ function displayRaces(allRaces) {
 	}
 	else {
 		$("#races").hide();
-		$("[data-role='main']").append("<span id='melding'>Er zijn nog geen races waar u aan deelneemt.</span>");
-	}
+        $("#noRaces").removeClass("hidden");
+		//$("[data-role='main']").append("<span id='melding'>Er zijn nog geen races waar u aan deelneemt.</span>");
+}
 };
 
 
