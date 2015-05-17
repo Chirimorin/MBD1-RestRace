@@ -19,6 +19,26 @@
     background-position: -30px 0;
 }
 
+.sprite-chevron-right {
+    background-position: -60px 0;
+}
+
+.sprite-back {
+    background-position: -90px 0;
+}
+
 .sprite-race {
     background-position: 0 -30px;
+}
+
+.sprite-profile {
+    background-position: -30px -30px;
+}
+
+.sprite-settings {
+    background-position: -60px -30px;
+}
+
+.sprite-logout {
+    background-position: -90px -30px;
 }
