@@ -20,9 +20,9 @@ $(document).on("pagebeforeshow", "#page_waypoint", function(){
 	// Opent native maps app
 	$("#link_toonOpKaart").off("tap").on("tap", function() {
 		if (device == "Android") {
-            navigator.app.loadUrl("geo:" + waypoint.location.lat + "," + waypoint.location.long + "?z=5&q=" + waypoint.location.lat + "," + waypoint.location.long + "(" + waypoint.location.name + ")", {openExternal : true});
+            //navigator.app.loadUrl("geo:" + waypoint.location.lat + "," + waypoint.location.long + "?z=5&q=" + waypoint.location.lat + "," + waypoint.location.long + "(" + waypoint.location.name + ")", {openExternal : true});
 
-			//window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long; + "?&q=" + waypoint.location.lat + "," + waypoint.location.long;// Android
+			window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long + "?z=5&q=" + waypoint.location.lat + "," + waypoint.location.long + "(" + waypoint.location.name + ")";
 		}
 		else if (device == "iOS") {
 			window.location = "maps://maps.google.com/maps?q=" + waypoint.location.lat + "," + waypoint.location.long; // iOS
