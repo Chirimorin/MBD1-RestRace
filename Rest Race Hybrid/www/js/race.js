@@ -3,6 +3,7 @@ var race = "";
 displayRaceDetails = function(){
     $("#races_detail").addClass("active");
     $("#races_list").removeClass("active");
+    $("#raceDetailContent").removeClass("hidden");
 
     // Haalt de goede race uit de opgeslagen races
     var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));

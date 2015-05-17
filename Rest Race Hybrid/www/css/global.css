@@ -46,8 +46,8 @@
         transition: none;
     }
 
-    #races_detail .backbutton {
-        display: none;
+    #BackToRacesList {
+        display: none !important;
     }
 }
 
@@ -129,4 +129,8 @@ button:hover {
 	float: right;
 	width: 50%;
 	text-align: right;
+}
+
+.hidden {
+    display: none !important;
 }

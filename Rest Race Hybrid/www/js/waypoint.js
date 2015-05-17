@@ -20,7 +20,7 @@ $(document).on("pagebeforeshow", "#page_waypoint", function(){
 	// Opent native maps app
 	$("#link_toonOpKaart").on("tap", function() {
 		if (device == "Android") {
-			window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long; // Android
+			window.location = "geo:" + waypoint.location.lat + "," + waypoint.location.long; + "?z=5&q=" + waypoint.location.lat + "," + waypoint.location.long  + "(" + waypoint.location.name + ")";// Android
 		}
 		else if (device == "iOS") {
 			window.location = "maps://maps.google.com/maps?daddr=" + waypoint.location.lat + "," + waypoint.location.long; // iOS
