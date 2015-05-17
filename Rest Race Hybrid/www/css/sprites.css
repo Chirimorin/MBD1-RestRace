@@ -19,8 +19,9 @@
     background-position: -30px 0;
 }
 
-.sprite-chevron-right {
-    background-position: -60px 0;
+.ui-icon-carat-r:after {
+    background-image: url('../img/spritesheet.png');
+    background-position: -63px -4px;
 }
 
 .sprite-back {
