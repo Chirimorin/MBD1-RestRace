@@ -57,7 +57,6 @@
   <feature name="http://api.phonegap.com/1.0/media" /> 
   <feature name="http://api.phonegap.com/1.0/network" />
   <feature name="http://api.phonegap.com/1.0/geolocation" />
-  
+    
   <access origin="*"/>
-    <access origin="geo:*" launch-external="yes" />
 </widget>
