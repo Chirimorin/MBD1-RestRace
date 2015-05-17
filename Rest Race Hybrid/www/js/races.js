@@ -106,6 +106,7 @@ function displayRaces(allRaces) {
             $.mobile.changePage("#page_race", {transition: transition}); // Toont race info pagina
 
             if (tabletLayout) {
+                // Ga meteen terug naar de races lijst in het geval van tablet layout. Beide staan op het scherm.
                 $.mobile.changePage("#page_races", {transition: 'none'}); // Toont race list pagina
             }
 		});			
