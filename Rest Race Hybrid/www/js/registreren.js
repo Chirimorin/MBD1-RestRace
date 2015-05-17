@@ -5,17 +5,22 @@ $(document).ready(function() {
 	$("#registreren").on("tap", function() {
 	
 		if (checkConnection()) {
-			
-			// Toont loading spinner
-			$.mobile.loading("show", {
-				text: msgText,
-				textVisible: textVisible,
-				theme: theme,
-				textonly: textonly,
-				html: html
-			});
-			
-			if ($("#emailadres").val() != "" || $("#wachtwoord").val() != "") {
+            if ($("#registreeremailadres").val() != "" && $("#registreerwachtwoord").val() != "") {
+                // Toont loading spinner
+                $.mobile.loading("show", {
+                    text: msgText,
+                    textVisible: textVisible,
+                    theme: theme,
+                    textonly: textonly,
+                    html: html
+                });
+
+                console.log( {
+                    "email": $("#registreeremailadres").val(),
+                    "password": $("#registreerwachtwoord").val()
+                });
+
+
 				$.ajax({
 					type: "POST",
 					url: restrace + "signup",
@@ -31,8 +36,16 @@ $(document).ready(function() {
 						$.mobile.loading("hide"); // Verbergt loading spinner
 						
 						if (data.authKey) {
-							save("authKey", data.authKey);
-							window.location = "races.html";
+                            $("#races_list").addClass("active");
+                            $("#races_detail").removeClass("active");
+
+                            $("#registreeremailadres").val("");
+                            $("#registreerwachtwoord").val("");
+
+                            save("authKey", data.authKey);
+                            data.nickname != null ? save("nickname", data.nickname) : save("nickname", "");
+                            save("visitedWaypoints", data.visitedLocations);
+                            $.mobile.changePage("#page_races");
 						}
 						else {
 							alert("Registreren mislukt.");
@@ -40,7 +53,9 @@ $(document).ready(function() {
 						}
 					}
 				});
-			}
+			} else {
+                alert("Voer een e-mail adres en een wachtwoord in");
+            }
 		}
 		else {
 			alert("Geen verbinding met het internet.");
