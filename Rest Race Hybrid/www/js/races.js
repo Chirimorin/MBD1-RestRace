@@ -17,7 +17,7 @@ $(document).on("pageshow", "#page_races", function() {
 	
 	// Swipe om menu te openen
 	$("#page_races").off("swiperight").on("swiperight", function(event){
-        if ($("#races_list").hasClass("active")) {
+        if ($("#races_list").hasClass("active") || window.matchMedia("all and (min-width: 50em)").matches) {
             $("#menu").panel("open");
         } else {
             $("#races_list").addClass("active");
