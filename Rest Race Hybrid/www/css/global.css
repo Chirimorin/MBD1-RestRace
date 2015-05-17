@@ -32,43 +32,24 @@
 @media all and (min-width: 50em){
     /* tablet layout */
 
-    #page_races #races_list {
+    #page_races #races_list,
+    #page_races #races_list.active{
         left: 0;
         width: 326px;
+        transition: none;
     }
 
-    #page_races #races_detail {
-        width: auto !important;
-        left: 326px !important;
-        right: 0 !important;
+    #page_races #races_detail,
+    #page_races #races_detail.active{
+        width: auto;
+        left: 326px;
+        right: 0;
+        transition: none;
     }
 
     #races_detail .backbutton {
         display: none;
     }
-
-    /*
-	#page_races.ui-page-active {
-		display: block;
-		float: left;
-		width: 326px;
-		position: relative;
-	}
-
-	#page_race.races-active {
-		display: inline-block;
-        position: absolute;
-		left: 326px;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        overflow-y: scroll;
-        width: auto !important;
-	}
-	
-	#page_race .backbutton {
-		display: none;
-	}*/
 }
 
 .header {
