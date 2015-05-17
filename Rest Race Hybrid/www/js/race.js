@@ -108,7 +108,13 @@ function onDeviceReady(){
 							playAudio(getPhoneGapPath() + "sounds/failure.mp3");
 							alert("U bent niet ingecheckt.");
 						}
-					}
+					},
+                    error: function(jqXHR,textStatus) {
+                        $.mobile.loading("hide");
+
+                        playAudio(getPhoneGapPath() + "sounds/failure.mp3");
+                        alert("Er ging iets mis tijdens het inchecken. (" + textStatus + ")");
+                    }
 				});
 			}
 			else {
