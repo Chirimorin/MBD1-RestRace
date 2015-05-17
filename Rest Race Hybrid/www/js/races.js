@@ -1,12 +1,6 @@
 var pageSetup = false;
 
 $(document).on("pageshow", "#page_races", function() {
-    //if (!pageSetup) {
-    //    $("#races_list").addClass("active");
-    //    $("#races_detail").removeClass("active");
-    //    pageSetup = true;
-    //}
-	
 	if (load("toon_aantalIngecheckteWaypoints") === null || load("toon_aantalIngecheckteWaypoints") == "") {
 		save("toon_aantalIngecheckteWaypoints", "Aan");
 	}
@@ -23,10 +17,6 @@ $(document).on("pageshow", "#page_races", function() {
 		$("#menu").panel("open");
 	});
 
-});
-
-$(document).on("pagebeforehide", "#page_races", function() {
-    $("#page_race").removeClass("races-active");
 });
 	
 function getRaces() {
