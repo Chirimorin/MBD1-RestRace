@@ -1,3 +1,5 @@
+var raceDetailLoaded = false;
+
 $(document).on("pageshow", "#page_races", function() {
 	
 	if (load("toon_aantalIngecheckteWaypoints") === null || load("toon_aantalIngecheckteWaypoints") == "") {
@@ -15,6 +17,13 @@ $(document).on("pageshow", "#page_races", function() {
 	$("#page_races").off("swiperight").on("swiperight", function(event){
 		$("#menu").panel("open");
 	});
+
+    // Wissel naar race detail pagina en terug. Dit is snel genoeg om niet te zien en zorgt voor de juiste styling. (nodig voor tablet layout)
+    if (!raceDetailLoaded) {
+        raceDetailLoaded = true;
+        $.mobile.changePage("#page_race", {transition: 'none'}); // Toont race info pagina
+        $.mobile.changePage("#page_races", {transition: 'none'}); // Toont race list pagina
+    }
 
 });
 	
@@ -90,8 +99,15 @@ function displayRaces(allRaces) {
 
             displayRaceDetails();
 
-			var transition = $(document).width() < 450 ? 'slide' : 'none';
-			$.mobile.changePage("#page_race", {transition: transition}); // Toont race info pagina
+            var tabletLayout = window.matchMedia("all and (min-width: 50em)").matches;
+
+			var transition = tabletLayout ? 'none' : 'slide';
+
+            $.mobile.changePage("#page_race", {transition: transition}); // Toont race info pagina
+
+            if (tabletLayout) {
+                $.mobile.changePage("#page_races", {transition: 'none'}); // Toont race list pagina
+            }
 		});			
 	}
 	else {

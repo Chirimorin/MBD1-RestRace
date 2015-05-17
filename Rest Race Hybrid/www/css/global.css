@@ -8,7 +8,6 @@
 		float: left;
 		width: 25%;
 		position: relative;
-		z-index: 200;
 	}
 
 	#page_race {
@@ -16,7 +15,6 @@
 		float: right;
 		width: 75%;
 		margin-left: 25%;
-		position: top;
 	}
 	
 	#page_race .backbutton {
