@@ -7,6 +7,7 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+
 		
 		<script type="text/javascript" src="cordova.js"></script>
 		
@@ -17,7 +18,9 @@
 		
 		<link rel="stylesheet" type="text/css" href="css/global.css" />
 		<script src="js/global.js"></script>
-		
+
+        <link rel="stylesheet" type="text/css" href="css/sprites.css" />
+
         <title>RestRace</title>
     </head>
     <body>
@@ -87,9 +90,9 @@
         <div data-role="page" id="page_races" class="ui-page">
             <div id="races_list" class="active">
             <div data-role="header" data-id="header" class="header">
-                <a href="#menu" data-icon="bars" data-iconpos="notext" id="btn_menu" class="icon"></a>
+                <a href="#menu" id="btn_menu" class="sprite sprite-menu"></a>
                 <h1>Races</h1>
-                <a href="#" data-icon="plus" data-iconpos="notext" id="race_toevoegen" class="ui-btn-right icon"></a>
+                <a href="#" id="race_toevoegen" class="ui-btn-right sprite sprite-add"></a>
             </div>
 
             <div data-role="main" class="ui-content">

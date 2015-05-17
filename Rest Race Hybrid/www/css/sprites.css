@@ -1,0 +1,24 @@
+.sprite {
+    background-image: url('../img/spritesheet.png');
+    background-repeat: none;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-color: transparent !important;
+    border-radius: 15px !important;
+    border: none !important;
+    display: table-cell !important;
+    vertical-align: middle !important;
+}
+
+.sprite-add {
+    background-position: 0 0;
+}
+
+.sprite-menu {
+    background-position: -30px 0;
+}
+
+.sprite-race {
+    background-position: 0 -30px;
+}
