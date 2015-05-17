@@ -1,8 +1,6 @@
 var race = "";
 
-
-
-displayRaceDetails = function(){
+$(document).on("pagebeforeshow", "#page_race", function(){
 
     // Haalt de goede race uit de opgeslagen races
     var allRaces = JSON.parse(sessionStorage.getItem("allRaces"));
@@ -29,9 +27,7 @@ displayRaceDetails = function(){
 
     displayWaypoints();
 
-}
-
-//$(document).on("pagebeforeshow", "#page_race", displayRaceDetails);
+});
 
 function displayWaypoints() {
 	$("#waypoints").empty();

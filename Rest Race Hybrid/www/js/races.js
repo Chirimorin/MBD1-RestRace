@@ -1,6 +1,7 @@
 var raceDetailLoaded = false;
 
 $(document).on("pageshow", "#page_races", function() {
+    $("#page_race").addClass("races-active");
 	
 	if (load("toon_aantalIngecheckteWaypoints") === null || load("toon_aantalIngecheckteWaypoints") == "") {
 		save("toon_aantalIngecheckteWaypoints", "Aan");
@@ -25,6 +26,10 @@ $(document).on("pageshow", "#page_races", function() {
         $.mobile.changePage("#page_races", {transition: 'none'}); // Toont race list pagina
     }
 
+});
+
+$(document).on("pagebeforehide", "#page_races", function() {
+    $("#page_race").removeClass("races-active");
 });
 	
 function getRaces() {
@@ -96,9 +101,7 @@ function displayRaces(allRaces) {
 		
 		$(".race").on("tap", function() {
 			save("race_id", $(this).attr("id"));
-
-            displayRaceDetails();
-
+            
             var tabletLayout = window.matchMedia("all and (min-width: 50em)").matches;
 
 			var transition = tabletLayout ? 'none' : 'slide';

@@ -10,7 +10,7 @@
 		position: relative;
 	}
 
-	#page_race {
+	#page_race.races-active {
 		display: inline-block;
 		/*float: right;*/
         position: absolute;
