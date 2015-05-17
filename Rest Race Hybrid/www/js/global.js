@@ -1,16 +1,12 @@
 restrace = "https://restrace2.herokuapp.com/";
 
 // Checkt of er verbinding is met het internet
-/*function checkConnection() {
+function checkConnection() {
 	if(!navigator.network) {
 		navigator.network = window.top.navigator.network;
 	}
 
 	return ( (navigator.network.connection.type === "none" || navigator.network.connection.type === null || navigator.network.connection.type === "unknown" ) ? false : true );
-}*/
-
-function checkConnection() {
-	return true;
 }
 
 // Functionaliteit van de backbutton
