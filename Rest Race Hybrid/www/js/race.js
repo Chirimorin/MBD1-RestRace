@@ -24,7 +24,7 @@ displayRaceDetails = function(){
     }
 
     // Toont race info pagina van de website
-    $("#link_racePagina").on("tap", function() {
+    $("#link_racePagina").off("tap").on("tap", function() {
 
         if (device == "Android") {
             navigator.app.loadUrl(restrace + "races/" + race._id + "?apikey=" + load("authKey"), {openExternal : true});
@@ -39,7 +39,7 @@ displayRaceDetails = function(){
 
     });
 
-    $("#BackToRacesList").on("tap", function() {
+    $("#BackToRacesList").off("tap").on("tap", function() {
         $("#races_list").addClass("active");
         $("#races_detail").removeClass("active");
     });
