@@ -51,7 +51,7 @@
 		<div data-role="page" id="page_registreren">
 
 			<div data-role="header" data-id="header" class="header">
-				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" class="icon"></a>
+				<a href="#" data-rel="back" class="sprite sprite-back"></a>
 				<h1>Registreren</h1>
 			</div>
 
@@ -72,7 +72,7 @@
 		<div data-role="page" id="page_race_toevoegen">
 
 			<div data-role="header" data-id="header" class="header">
-				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" class="icon"></a>
+				<a href="#" data-rel="back" class="sprite sprite-back"></a>
 				<h1>Race toevoegen</h1>
 			</div>
 
@@ -104,11 +104,10 @@
         </div>
 		
 		<!-- RACE INFO PAGINA -->
-		<!-- <div data-role="page" id="page_race"> -->
-
-            <div id="races_detail">
+        <div id="races_detail">
 			<div data-role="header" data-id="header" class="header">
-				<a href="#" id="BackToRacesList" data-role="button" data-icon="back" data-iconpos="notext" class="icon backbutton"></a>
+				<a href="#menu" id="btn_menu" class="sprite sprite-menu"></a>
+				<a href="#" id="BackToRacesList" class="sprite sprite-back"></a>
 				<h1>Race</h1>
 			</div>
 
@@ -135,7 +134,7 @@
 				<button id="btn_inchecken">Inchecken waypoint</button>
 				
 				<br />
-				<center><a id="link_racePagina">Bekijk race op website</a></center>
+				<center><a id="link_racePagina" data-history="true">Bekijk race op website</a></center>
 			</div>
 
 			<script src="js/race.js"></script>
@@ -146,7 +145,7 @@
 		<div data-role="page" id="page_waypoint">
 
 			<div data-role="header" data-id="header" class="header">
-				<a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" class="icon"></a>
+				<a href="#" data-rel="back" class="sprite sprite-back"></a>
 				<h1>Waypoint</h1>
 			</div>
 
@@ -165,7 +164,7 @@
 		<div data-role="page" id="page_profiel">
 		
 			<div data-role="header" data-id="header" class="header">
-				<a href="#menu" data-icon="bars" id="btn_menu" data-iconpos="notext" class="icon"></a>
+				<a href="#menu" id="btn_menu" class="sprite sprite-menu"></a>
 				<h1>Profiel</h1>
 			</div>
 
@@ -187,7 +186,7 @@
 		<div data-role="page" id="page_settings">
 
 			<div data-role="header" data-id="header" class="header">
-				<a href="#menu" data-icon="bars" id="btn_menu" data-iconpos="notext" class="icon"></a>
+				<a href="#menu" id="btn_menu" class="sprite sprite-menu"></a>
 				<h1>Settings</h1>
 			</div>
 
