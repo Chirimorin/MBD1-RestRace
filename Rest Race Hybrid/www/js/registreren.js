@@ -24,8 +24,8 @@ $(document).ready(function() {
 					},
 					dataType: "json",
 					data: {
-						"email": $("#emailadres").val(),
-						"password": $("#wachtwoord").val()
+						"email": $("#registreeremailadres").val(),
+						"password": $("#registreerwachtwoord").val()
 					},
 					success: function(data) {
 						$.mobile.loading("hide"); // Verbergt loading spinner
