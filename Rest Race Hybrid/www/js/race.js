@@ -35,7 +35,6 @@ displayRaceDetails = function(){
         else {
             window.open(restrace + "races/" + race._id + "?apikey=" + load("authKey"), '_system'); // Default
         }
-        // window.location = restrace + "races/" + race._id + "?apikey=" + load("authKey");
 
     });
 

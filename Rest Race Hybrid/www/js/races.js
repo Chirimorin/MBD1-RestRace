@@ -99,24 +99,11 @@ function displayRaces(allRaces) {
 			save("race_id", $(this).attr("id"));
 
             displayRaceDetails();
-
-            //var tabletLayout = window.matchMedia("all and (min-width: 50em)").matches;
-//
-			//var transition = tabletLayout ? 'none' : 'slide';
-//
-            //
-            //$.mobile.changePage("#page_race", {transition: transition}); // Toont race info pagina
-//
-            //if (tabletLayout) {
-            //    // Ga meteen terug naar de races lijst in het geval van tablet layout. Beide staan op het scherm.
-            //    $.mobile.changePage("#page_races", {transition: 'none'}); // Toont race list pagina
-            //}
 		});			
 	}
 	else {
 		$("#races").hide();
         $("#noRaces").removeClass("hidden");
-		//$("[data-role='main']").append("<span id='melding'>Er zijn nog geen races waar u aan deelneemt.</span>");
 }
 };
 
